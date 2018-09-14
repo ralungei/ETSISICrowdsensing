@@ -1,0 +1,54 @@
+<resources>
+
+    <string name="activity_login">Smart Campus</string>
+
+    <string name="prompt_email">Correo UPM</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="prompt_repeat_password">Confirmar la contraseña</string>
+    <string name="action_sign_in_short">Iniciar Sesión</string>
+    <string name="action_register">Registrarse</string>
+
+    <string name="error_invalid_email">El correo introducido es incorrecto</string>
+    <string name="error_invalid_password">La contraseña es demasiado corta</string>
+    <string name="error_password_match">Las contraseñas no coinciden</string>
+
+    <string name="error_incorrect_password">La contraseña introducida es incorrecta</string>
+    <string name="error_field_required">Rellene el campo</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="app_name">Smart Campus</string>
+    <string name="prompt_no_account_message">¿No tienes una cuenta?</string>
+    <string name="action_text_register">Regístrate</string>
+    <string name="prompt_yes_account_message">¿Ya tienes una cuenta?</string>
+    <string name="action_login">Entrar</string>
+    <string name="alert_login_fail_message">La contraseña que has escrito no es correcta. Vuelve a intentarlo.</string>
+    <string name="alert_login_fail_title">Contraseña incorrecta</string>
+    <string name="ok">OK</string>
+    <string name="next">Siguiente</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="title_campus">Campus</string>
+    <string name="title_notifications">Notificaciones</string>
+    <string name="title_profile">Perfil</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="option_docencia">Docencia</string>
+    <string name="option_bienestar">Bienestar</string>
+    <string name="option_comedor">Comedor</string>
+    <string name="option_noticias">Noticias</string>
+    <string name="option_mapa">Mapa</string>
+    <string name="option_transport">Transporte</string>
+    <string name="title_activity_maps">Mapa</string>
+
+
+    <string name="default_notification_channel_id" translatable="false">fcm_default_channel</string>
+    <string name="title_activity_transport">Transporte</string>
+
+    <string name="title_activity_news">Noticias</string>
+    <string name="title_incidence_detail_activity">Incidencia</string>
+    <string name="title_activity_new_incidence">NewIncidence</string>
+
+
+</resources>

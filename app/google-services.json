@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "1006782487784",
+    "firebase_url": "https://smart-campus-3da4a.firebaseio.com",
+    "project_id": "smart-campus-3da4a",
+    "storage_bucket": "smart-campus-3da4a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1006782487784:android:8e2dcfc770b0578a",
+        "android_client_info": {
+          "package_name": "com.etsisi.dev.etsisicrowdsensing"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1006782487784-u2ljh3ijlvf9ju0hbahshsm0u3q71uj7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.etsisi.dev.etsisicrowdsensing",
+            "certificate_hash": "b738f7ff80809a9771259f60a19e3c1d20c1bcf9"
+          }
+        },
+        {
+          "client_id": "1006782487784-942ptcnvd6306nbedt3j200arhcctt2h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBdznebUXnMMkYCr7e9PU1142c3WKR1JNo"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1006782487784-942ptcnvd6306nbedt3j200arhcctt2h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
