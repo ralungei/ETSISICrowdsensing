@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    >
+
+    <RelativeLayout
+        android:id="@+id/eventLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/separator"
+
+        >
+
+        <TextView
+            android:id="@+id/subjectView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fundamentos de computadores"
+            android:textSize="14dp"
+            android:textColor="@color/tw__composer_black"
+
+            />
+
+        <TextView
+            android:id="@+id/descriptionView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/subjectView"
+            android:text="Bloque IX"
+            android:textSize="12dp"
+            />
+
+        <TextView
+            android:id="@+id/kindView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="EXAMEN"
+            android:layout_alignParentRight="true"
+            android:textSize="7dp"
+            android:textColor="@color/red"
+            android:layout_alignBottom="@id/descriptionView"
+            />
+
+
+    </RelativeLayout>
+
+    <View
+        android:id="@+id/separator"
+        android:layout_width="1dp"
+        android:layout_height="30dp"
+        android:layout_toRightOf="@id/dateLayout"
+        android:background="@color/colorPrimary"
+        android:layout_marginLeft="5dp"
+        android:layout_marginRight="5dp"
+        android:layout_centerVertical="true"
+        />
+
+    <RelativeLayout
+        android:id="@+id/dateLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        >
+
+        <TextView
+            android:id="@+id/dateView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/timeView"
+            android:text="08/06/2018"
+            android:textSize="8dp"
+            android:layout_centerHorizontal="true"
+            />
+
+        <TextView
+            android:id="@+id/timeView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="11:00"
+            android:textSize="8dp"
+            android:textColor="@color/tw__composer_black"
+            android:layout_centerHorizontal="true"
+            />
+    </RelativeLayout>
+
+
+</RelativeLayout>

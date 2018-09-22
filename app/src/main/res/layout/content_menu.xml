@@ -23,23 +23,30 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <ImageView
+                android:id="@+id/iconMap"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:layout_marginTop="5dp"
                 android:padding="10dp"
-                android:src="@drawable/icon_map" />
+                android:src="@drawable/icon_map"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerInParent="true"
                 android:text="Mapa"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/iconMap"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 
@@ -58,30 +65,34 @@
         app:layout_constraintStart_toEndOf="@+id/mapCard"
         app:layout_constraintTop_toBottomOf="@+id/transportCard">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <ImageView
+                android:id="@+id/iconNews"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:layout_marginTop="5dp"
                 android:padding="10dp"
-                android:src="@drawable/icon_news" />
+                android:src="@drawable/icon_news"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginTop="2dp"
                 android:text="Noticias"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/iconNews"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -100,30 +111,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <ImageView
+                android:id="@+id/iconFood"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:layout_marginTop="5dp"
                 android:padding="10dp"
-                android:src="@drawable/icon_food" />
+                android:src="@drawable/icon_food"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginTop="2dp"
                 android:text="Comedor"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/iconFood"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
@@ -141,29 +156,34 @@
         app:layout_constraintStart_toEndOf="@+id/foodCard"
         app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            >
 
             <ImageView
+                android:id="@+id/iconTransport"
                 android:layout_width="65dp"
                 android:layout_height="65dp"
-                android:layout_marginTop="5dp"
                 android:padding="10dp"
-                android:src="@drawable/icon_transport" />
+                android:src="@drawable/icon_transport"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginEnd="5dp"
-                android:layout_marginTop="2dp"
                 android:text="Transporte"
                 android:textColor="@color/white"
                 android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                android:textStyle="bold"
+                android:layout_toRightOf="@id/iconTransport"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="5dp"
+                />
+        </RelativeLayout>
     </android.support.v7.widget.CardView>
 
 </android.support.constraint.ConstraintLayout>

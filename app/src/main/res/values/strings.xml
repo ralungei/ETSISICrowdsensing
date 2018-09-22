@@ -48,7 +48,10 @@
 
     <string name="title_activity_news">Noticias</string>
     <string name="title_incidence_detail_activity">Incidencia</string>
-    <string name="title_activity_new_incidence">NewIncidence</string>
+    <string name="title_activity_new_incidence">Nueva incidencia</string>
+    <string name="title_candle_list">Candles</string>
+    <string name="title_candle_detail">Candle Detail</string>
+    <string name="title_activity_feedback">Feedback</string>
 
 
 </resources>

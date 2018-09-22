@@ -1,4 +1,4 @@
-package com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus;
+package com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences;
 
 import android.widget.ImageView;
 

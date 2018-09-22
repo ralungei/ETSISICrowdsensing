@@ -5,11 +5,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".bottom.navigation.bar.fragment.campus.IncidenceDetailActivity"
+    tools:context=".bottom.navigation.bar.fragment.campus.incidences.IncidenceDetailActivity"
     tools:showIn="@layout/activity_incidence_detail">
 
     <TextView
-        android:id="@+id/tvEmailTitle"
+        android:id="@+id/incidenceTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -23,7 +23,7 @@
         android:id="@+id/line"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_below="@id/tvEmailTitle"
+        android:layout_below="@id/incidenceTitle"
         android:layout_marginBottom="5dp"
         android:layout_marginTop="5dp"
         android:background="#D3D3D3" />

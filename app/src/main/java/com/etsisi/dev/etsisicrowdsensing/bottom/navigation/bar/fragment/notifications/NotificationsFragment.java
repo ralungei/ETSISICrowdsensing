@@ -1,6 +1,7 @@
 package com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications;
 
 import android.content.Context;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,7 +26,8 @@ import java.util.ArrayList;
  * Use the {@link NotificationsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class NotificationsFragment extends Fragment {
+public class NotificationsFragment extends Fragment
+                                    implements NotificationItemClickListener{
     private OnFragmentInteractionListener mListener;
     private ArrayList<Notification> notificationsData;
 
@@ -61,28 +63,8 @@ public class NotificationsFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-
-        notificationsData = new ArrayList<Notification>();
-        // Notifications sample
-        notificationsData.add(new Notification(R.drawable.icon_transport, "Transporte","El autobus dirección Coslada llegará en 5 minutos", "1min"));
-        notificationsData.add(new FeedbackNotification(R.drawable.bubble_material,"Encuesta 1", "This is the first notification description line", "12min", "Fundamentos de computadores"));
-        notificationsData.add(new FeedbackNotification(R.drawable.bubble_material,"Encuesta 2", "This is the first notification description line", "12min", "Estadística"));
-
-
-        RecyclerView notificationsRecyclerView = (RecyclerView) getView().findViewById(R.id.notificationsRecyclerView);
-
-        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext(),
-                LinearLayoutManager.VERTICAL, false);
-        notificationsRecyclerView.setLayoutManager(mLinearLayoutManager);
-
-        //  This item decoration is used to draw a line under each item in Recyclerview.
-        //notificationsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
-        //        DividerItemDecoration.VERTICAL));
-
-        NotificationsAdapter notificationsAdapter = new NotificationsAdapter(getActivity(), notificationsData);
-        notificationsRecyclerView.setAdapter(notificationsAdapter);
-
+        loadNotifications();
+        notificationsRecyclerViewConfig();
 
         /*
         notificationsRecyclerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -97,7 +79,29 @@ public class NotificationsFragment extends Fragment {
        */
 
 
+    }
 
+    private void loadNotifications(){
+        notificationsData = new ArrayList<Notification>();
+        // Notifications sample
+        notificationsData.add(new Notification(R.drawable.icon_transport, "Transporte","El autobus dirección Coslada llegará en 5 minutos", "1min"));
+        notificationsData.add(new FeedbackForm(R.drawable.bubble_material,"Encuesta 1", "This is the first notification description line", "12min", "Fundamentos de computadores"));
+        notificationsData.add(new FeedbackForm(R.drawable.bubble_material,"Encuesta 2", "This is the first notification description line", "12min", "Estadística"));
+    }
+
+    private void notificationsRecyclerViewConfig(){
+        RecyclerView notificationsRecyclerView = (RecyclerView) getView().findViewById(R.id.notificationsRecyclerView);
+
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext(),
+                LinearLayoutManager.VERTICAL, false);
+        notificationsRecyclerView.setLayoutManager(mLinearLayoutManager);
+
+        //  This item decoration is used to draw a line under each item in Recyclerview.
+        //notificationsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+        //        DividerItemDecoration.VERTICAL));
+
+        NotificationsAdapter notificationsAdapter = new NotificationsAdapter(this, notificationsData);
+        notificationsRecyclerView.setAdapter(notificationsAdapter);
     }
 
     // TODO: Rename method, update argument and hook method into UI event
@@ -122,6 +126,13 @@ public class NotificationsFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onNotificationItemClick(int pos, Notification notification) {
+        Intent intent;
+        intent = new Intent(getContext(), FeedbackActivity.class);
+        startActivity(intent);
     }
 
     /**
