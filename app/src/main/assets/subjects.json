@@ -1,0 +1,62 @@
+[
+  {
+    "id": 1,
+    "course": 1,
+    "title": "Estructura de computadores",
+    "credits": 5,
+    "groups": [
+      "GM11",
+      "GM12",
+      "GM13",
+      "GM14",
+      "GM15",
+      "GT11",
+      "GT12",
+      "GT13"
+    ]
+  },
+  {
+    "id": 2,
+    "course": 2,
+    "title": "Programación concurrente y avanzada",
+    "groups": [
+      "GM21",
+      "GM22",
+      "GT21",
+      "GT22"
+    ]
+  },
+  {
+    "id": 3,
+    "course": 3,
+    "title": "Construcción y diseño de interfaces gráficas de usuario",
+    "groups": [
+      "GSWM31",
+      "GSWT31"
+    ]
+  },
+  {
+    "id": 4,
+    "course": 1,
+    "title": "Álgebra",
+    "groups": [
+      "GM11",
+      "GM12",
+      "GM13",
+      "GM14",
+      "GM15",
+      "GT11",
+      "GT12",
+      "GT13"
+    ]
+  },
+  {
+    "id": 5,
+    "course": 4,
+    "title": "English for Professional and Academic Communication",
+    "groups": [
+      "GOPM41",
+      "GOPT41"
+    ]
+  }
+]

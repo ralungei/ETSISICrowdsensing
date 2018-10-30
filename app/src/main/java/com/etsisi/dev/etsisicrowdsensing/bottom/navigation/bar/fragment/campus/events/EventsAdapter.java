@@ -1,7 +1,6 @@
 package com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +8,11 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import com.etsisi.dev.etsisicrowdsensing.R;
+import com.etsisi.dev.etsisicrowdsensing.model.Event;
 
 import java.util.ArrayList;
 
-public class EventsAdapter extends RecyclerView.Adapter<EventsViewHolder> {
+public class EventsAdapter extends RecyclerView.Adapter<EventsAdapter.EventsViewHolder> {
 
     private Context mContext;
     private final EventItemClickListener eventItemClickListener;
@@ -23,6 +23,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsViewHolder> {
         this.mDataset = myDataset;
         this.mContext = context;
     }
+
 
     // Create new views (invoked by the layout manager)
     @Override
@@ -61,7 +62,7 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsViewHolder> {
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //eventItemClickListener.onEventItemClick(holder.getAdapterPosition(), eventItem, holder.bubbleImageView);
+                eventItemClickListener.onEventItemClick(holder.getAdapterPosition(), eventItem);
             }
         });
     }
@@ -71,29 +72,47 @@ public class EventsAdapter extends RecyclerView.Adapter<EventsViewHolder> {
     public int getItemCount() {
         return mDataset.size();
     }
-}
 
-// Provide a reference to the views for each data item
-// Complex data items may need more than one view per item, and
-// you provide access to all the views for a data item in a view holder
-class EventsViewHolder extends RecyclerView.ViewHolder {
-    TextView dateView;
-    TextView timeView;
-    TextView subjectView;
-    TextView locationView;
-    TextView kindView;
-
-    public EventsViewHolder(View v) {
-        super(v);
-
-        dateView = (TextView) v.findViewById(R.id.dateView);
-        timeView = (TextView) v.findViewById(R.id.timeView);
-        subjectView = (TextView) v.findViewById(R.id.subjectView);
-        locationView = (TextView) v.findViewById(R.id.descriptionView);
-        kindView = (TextView) v.findViewById(R.id.kindView);
+    public void removeItem(int position) {
+        mDataset.remove(position);
+        // notify the item removed by position
+        // to perform recycler view delete animations
+        // NOTE: don't call notifyDataSetChanged()
+        notifyItemRemoved(position);
 
     }
 
+    public void restoreItem(Event event, int position) {
+        mDataset.add(position, event);
+        // notify item added by position
+        notifyItemInserted(position);
+    }
+
+
+    // Provide a reference to the views for each data item
+    // Complex data items may need more than one view per item, and
+    // you provide access to all the views for a data item in a view holder
+    public class EventsViewHolder extends RecyclerView.ViewHolder {
+        TextView dateView;
+        TextView timeView;
+        TextView subjectView;
+        TextView locationView;
+        TextView kindView;
+
+        public EventsViewHolder(View v) {
+            super(v);
+
+            dateView = (TextView) v.findViewById(R.id.dateView);
+            timeView = (TextView) v.findViewById(R.id.timeView);
+            subjectView = (TextView) v.findViewById(R.id.subjectView);
+            locationView = (TextView) v.findViewById(R.id.descriptionView);
+            kindView = (TextView) v.findViewById(R.id.kindView);
+
+        }
+
+    }
 }
+
+
 
 

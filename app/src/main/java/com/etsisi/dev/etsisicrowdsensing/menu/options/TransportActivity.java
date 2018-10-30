@@ -1,12 +1,11 @@
 package com.etsisi.dev.etsisicrowdsensing.menu.options;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -16,7 +15,7 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.etsisi.dev.etsisicrowdsensing.R;
 
-public class TransportActivity extends AppCompatActivity implements View.OnClickListener {
+public class TransportActivity extends Activity implements View.OnClickListener {
 
     private static final String TAG = "TransportActivity";
 
@@ -27,9 +26,11 @@ public class TransportActivity extends AppCompatActivity implements View.OnClick
 
         // Set toolbar
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setActionBar(toolbar);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setTitle("");
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayShowHomeEnabled(true);
 
         //TextView textView = findViewById(R.id.textView);
 

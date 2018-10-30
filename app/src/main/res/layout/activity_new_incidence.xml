@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".NewIncidence">
+    tools:context=".bottom.navigation.bar.fragment.campus.incidents.NewIncidence">
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"

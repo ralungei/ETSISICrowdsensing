@@ -14,9 +14,13 @@ import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.profile.ProfileFragment;
+import com.etsisi.dev.etsisicrowdsensing.model.Incidence;
+
+import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity
-    implements  CampusFragment.OnFragmentInteractionListener,
+    implements  CampusFragment.OnCampusFragmentInteractionListener,
                 NotificationsFragment.OnFragmentInteractionListener,
                 ProfileFragment.OnFragmentInteractionListener{
 
@@ -24,32 +28,22 @@ public class MainActivity extends AppCompatActivity
     private AHBottomNavigation bottomNavigation;
     private boolean notificationVisible = false;
 
-           // OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
-           // = new BottomNavigationView.OnNavigationItemSelectedListener() {
+    /**
+     * TODO Connect to DB
+     * Incidences array
+     */
+    private ArrayList<Incidence> incidencesDataset;
 
-    /*
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-            switch (item.getItemId()) {
-                case R.id.navigation_campus:
-                    loadFragment(CampusFragment.newInstance());
-                    return true;
-                case R.id.navigation_notifications:
-                    loadFragment(NotificationsFragment.newInstance());
-                    return true;
-                case R.id.navigation_profile:
-                    loadFragment(ProfileFragment.newInstance("Nombre"));
-                    return true;
-            }
-            return false;
-        }
-    };
-    */
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        /**
+         * TODO Load data from database
+         */
+        loadIncidences();
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
         addBottomNavigationItems();
@@ -57,6 +51,8 @@ public class MainActivity extends AppCompatActivity
 
         // Fake notification (Delete line below)
         createFakeNotification();
+
+        bottomNavigation.setBehaviorTranslationEnabled(false);
 
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
@@ -96,6 +92,34 @@ public class MainActivity extends AppCompatActivity
 
         // Commit the transaction
         transaction.commit();
+    }
+
+    private void loadIncidences(){
+        incidencesDataset = new ArrayList<Incidence>();
+        /*
+        Incidence in1 = new Incidence("Material", "Pizarra", 3402, new Date());
+        Incidence in2 = new Incidence("Ambiente", "Demasiado frío", 3, new Date());
+        Incidence in3 = new Incidence("Instalaciones", "Bancos", 3, new Date());
+        incidencesDataset.add(in1);
+        incidencesDataset.add(in2);
+        incidencesDataset.add(in3);
+        */
+    }
+
+    @Override
+    public boolean addIncidence(Incidence incidence){
+        // TODO Update database
+        return incidencesDataset.add(incidence);
+    }
+
+    @Override
+    public boolean deleteIncidence(Incidence incidence){
+        // TODO Update database
+        return incidencesDataset.remove(incidence);
+    }
+
+    public ArrayList<Incidence> getIncidencesDataset() {
+        return incidencesDataset;
     }
 
     @Override

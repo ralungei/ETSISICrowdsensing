@@ -12,7 +12,18 @@
 
         <!-- The Color of the Status bar -->
         <!--<item name="android:windowTranslucentStatus">true</item>-->
+
+        <item name="textInputStyle">@style/Widget.Design.TextInputLayout</item>
+        <item name="coordinatorLayoutStyle">@style/Widget.Support.CoordinatorLayout</item>
+
     </style>
+
+    <style name="Custom.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
+        <!-- THIS is where you can color the arrow! -->
+        <item name="colorControlNormal">@color/black</item>
+    </style>
+
+
 
     <style name="BottomNavigation">
         <item name="android:background">#d7d7d7</item>
@@ -22,4 +33,18 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/orange</item>
+        <item name="colorControlActivated">@color/orange</item>
+        <item name="android:progressDrawable">@drawable/custom_ratingbar_selector</item>
+        <item name="android:minHeight">18dp</item>
+        <item name="android:maxHeight">18dp</item>
+
+    </style>
+
+    <style name="primaryButtonStyle" parent="Base.Widget.AppCompat.Button">
+        <item name="android:textColor">@drawable/primary_button_text_color</item>
+        <item name="android:backgroundTint">@color/colorPrimary</item>
+
+    </style>
 </resources>

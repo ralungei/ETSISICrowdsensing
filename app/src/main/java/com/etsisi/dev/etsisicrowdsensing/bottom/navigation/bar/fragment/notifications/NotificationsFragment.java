@@ -14,8 +14,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.etsisi.dev.etsisicrowdsensing.R;
+import com.etsisi.dev.etsisicrowdsensing.model.FeedbackForm;
+import com.etsisi.dev.etsisicrowdsensing.model.Notification;
+import com.etsisi.dev.etsisicrowdsensing.model.Subject;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Date;
 
 
 /**
@@ -29,7 +36,7 @@ import java.util.ArrayList;
 public class NotificationsFragment extends Fragment
                                     implements NotificationItemClickListener{
     private OnFragmentInteractionListener mListener;
-    private ArrayList<Notification> notificationsData;
+    private ArrayList<Object> mData;
 
     public NotificationsFragment() {
         // Required empty public constructor
@@ -63,7 +70,7 @@ public class NotificationsFragment extends Fragment
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        loadNotifications();
+        loadData();
         notificationsRecyclerViewConfig();
 
         /*
@@ -81,16 +88,22 @@ public class NotificationsFragment extends Fragment
 
     }
 
-    private void loadNotifications(){
-        notificationsData = new ArrayList<Notification>();
+    private void loadData(){
+        mData = new ArrayList<Object>();
         // Notifications sample
-        notificationsData.add(new Notification(R.drawable.icon_transport, "Transporte","El autobus dirección Coslada llegará en 5 minutos", "1min"));
-        notificationsData.add(new FeedbackForm(R.drawable.bubble_material,"Encuesta 1", "This is the first notification description line", "12min", "Fundamentos de computadores"));
-        notificationsData.add(new FeedbackForm(R.drawable.bubble_material,"Encuesta 2", "This is the first notification description line", "12min", "Estadística"));
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
+        try {
+            Date date = sdf.parse("21/12/2018 12:00");
+            Subject sub = new Subject(1,"Fundamentos de Computadores", 3, 2, new ArrayList<>());
+            mData.add(new FeedbackForm(sub, date, 2, 3104));
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
     }
 
+
     private void notificationsRecyclerViewConfig(){
-        RecyclerView notificationsRecyclerView = (RecyclerView) getView().findViewById(R.id.notificationsRecyclerView);
+        RecyclerView notificationsRecyclerView = (RecyclerView) getView().findViewById(R.id.recyclerView);
 
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false);
@@ -100,7 +113,7 @@ public class NotificationsFragment extends Fragment
         //notificationsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
         //        DividerItemDecoration.VERTICAL));
 
-        NotificationsAdapter notificationsAdapter = new NotificationsAdapter(this, notificationsData);
+        NotificationsAdapter notificationsAdapter = new NotificationsAdapter(this, mData);
         notificationsRecyclerView.setAdapter(notificationsAdapter);
     }
 

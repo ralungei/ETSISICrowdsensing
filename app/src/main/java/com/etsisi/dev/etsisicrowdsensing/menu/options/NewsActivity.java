@@ -1,23 +1,21 @@
 package com.etsisi.dev.etsisicrowdsensing.menu.options;
 
 import android.app.ListActivity;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.widget.ListView;
+import android.widget.Toolbar;
+
 
 import com.etsisi.dev.etsisicrowdsensing.R;
 import com.twitter.sdk.android.core.Twitter;
 import com.twitter.sdk.android.tweetui.TweetTimelineListAdapter;
-import com.twitter.sdk.android.tweetui.TweetTimelineRecyclerViewAdapter;
 import com.twitter.sdk.android.tweetui.UserTimeline;
 
-public class NewsActivity extends AppCompatActivity {
+public class NewsActivity extends ListActivity {
 
     private static Twitter twitter;
-    private ListView listView;
+
+    private static final String TAG = "NewsActivity";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,12 +23,18 @@ public class NewsActivity extends AppCompatActivity {
         setContentView(R.layout.activity_news);
 
         // Set toolbar
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setActionBar(toolbar);
+        getActionBar().setTitle("");
+        getActionBar().setDisplayHomeAsUpEnabled(true);
+        getActionBar().setDisplayShowHomeEnabled(true);
 
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        listView = findViewById(R.id.tweetsListView);
+
+
+        //final ListView listView = (ListView) findViewById(R.id.list_view);
+
 
         Twitter.initialize(this);
 
@@ -42,9 +46,7 @@ public class NewsActivity extends AppCompatActivity {
                 .setTimeline(userTimeline)
                 .build();
 
-
-
-        listView.setAdapter(adapter);
+        setListAdapter(adapter);
     }
 
 }

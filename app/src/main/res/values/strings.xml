@@ -9,7 +9,7 @@
     <string name="action_register">Registrarse</string>
 
     <string name="error_invalid_email">El correo introducido es incorrecto</string>
-    <string name="error_invalid_password">La contraseña es demasiado corta</string>
+    <string name="error_invalid_password">La contraseña debe contener al menos 6 caracteres.</string>
     <string name="error_password_match">Las contraseñas no coinciden</string>
 
     <string name="error_incorrect_password">La contraseña introducida es incorrecta</string>
@@ -53,5 +53,92 @@
     <string name="title_candle_detail">Candle Detail</string>
     <string name="title_activity_feedback">Feedback</string>
 
+
+    <!-- Calendar names -->
+    <string name="material_calendar_monday">L</string>
+    <string name="material_calendar_tuesday">M</string>
+    <string name="material_calendar_wednesday">X</string>
+    <string name="material_calendar_thursday">J</string>
+    <string name="material_calendar_friday">V</string>
+    <string name="material_calendar_saturday">S</string>
+    <string name="material_calendar_sunday">D</string>
+
+    <array name="mcv_monthLabels">
+        <item>Enero</item>
+        <item>Febrero</item>
+        <item>Marzo</item>
+        <item>Abril</item>
+        <item>Mayo</item>
+        <item>Junio</item>
+        <item>Julio</item>
+        <item>Agosto</item>
+        <item>Septiembre</item>
+        <item>Octubre</item>
+        <item>Noviembre</item>
+        <item>Diciembre</item>
+    </array>
+
+    <array name="mcv_weekDayLabels">
+        <item>lun</item>
+        <item>mar</item>
+        <item>mié</item>
+        <item>jue</item>
+        <item>vie</item>
+        <item>sáb</item>
+        <item>dom</item>
+    </array>
+
+    <array name="cursos_array">
+        <item>Primero</item>
+        <item>Segundo</item>
+        <item>Tercero</item>
+        <item>Cuarto</item>
+    </array>
+
+
+    <string name="material_calendar_today_button">Hoy</string>
+    <string name="material_calendar_positive_button">OK</string>
+    <string name="material_calendar_negative_button">Cancelar</string>
+    <string name="title_activity_calendar">Calendario</string>
+    <string name="no_data_available">No tienes ningún evento próximamente</string>
+    <string name="your_calendar">Tu calendario</string>
+    <string name="next_events">Eventos próximos</string>
+    <string name="incidents">Incidencias</string>
+    <string name="welcome_to_campus">¡Bienvenido a Campus!</string>
+    <string name="finish">Finalizar</string>
+    <string name="back">Atrás</string>
+    <string name="select_your_groups">Selecciona tus grupos</string>
+    <string name="step_5_of_5">Paso 5 de 5</string>
+    <string name="error_user_exists">Otra cuenta usa este correo electrónico.</string>
+    <string name="incorrect_password">La contraseña que has escrito no es correcta. Vuelve a intentarlo.</string>
+    <string name="incorrect_email">No existe una cuenta asociada al correo introducido o está desactivada.</string>
+    <string name="introduce_name">Antes de empezar, dínos cómo te llamas</string>
+    <string name="name">Nombre</string>
+    <string name="step_2_of_5">Paso 2 de 5</string>
+    <string name="user_wizard_image_description">User shape image</string>
+
+    <string name="new_incidence_problem_question">¿Cuál ha sido el problema?</string>
+    <string name="new_incidence_damaged_run_out_question">¿Qué está dañado o agotado?</string>
+    <string name="new_incidence_damaged_question">¿Qué está dañado?</string>
+
+    <string name="incidence_detail_problem_prompt">Sensación</string>
+     <string name="incidence_detail_damaged_run_out_prompt">Elemento dañado o agotado</string>
+    <string name="incidence_detail_damaged_prompt">Elemento dañado</string>
+
+    <string name="incidence_material_category">Material</string>
+    <string name="incidence_atmosphere_category">Ambiente</string>
+    <string name="incidence_facilities_category">Instalaciones</string>
+    <string name="add">Añadir</string>
+    <string name="bloque">Bloque</string>
+    <string name="aula">Aula</string>
+    <string name="incidence_under_revision">La incidencia está en proceso de revisión</string>
+    <string name="incidence_checked">La incidencia ha sido revisada. Pronto se tomarán medidas.</string>
+    <string name="category_prompt">Categoría</string>
+    <string name="question_problem_root_prompt">Question</string>
+    <string name="location_kind_aula_prompt">Aula</string>
+    <string name="location_kind_bloque_prompt">Bloque</string>
+    <string name="number_hint">Número</string>
+    <string name="where_prompt">¿Dónde?</string>
+    <string name="delete">Eliminar</string>
 
 </resources>

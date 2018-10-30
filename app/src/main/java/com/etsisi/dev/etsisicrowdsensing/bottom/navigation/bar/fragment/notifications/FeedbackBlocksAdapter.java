@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.etsisi.dev.etsisicrowdsensing.R;
@@ -38,6 +39,40 @@ public class FeedbackBlocksAdapter extends RecyclerView.Adapter<FeedbackBlocksVi
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
         holder.topic.setText(mTopics.get(position));
+
+
+
+
+        holder.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
+                if(holder.ratingDisplayTextView.getVisibility() == View.GONE)
+                    holder.ratingDisplayTextView.setVisibility(View.VISIBLE);
+
+                switch(Math.round(rating)) {
+                    case 1:
+                        holder.ratingDisplayTextView.setText("Muy malo");
+                        break;
+                    case 2:
+                        holder.ratingDisplayTextView.setText("Malo");
+                        break;
+                    case 3:
+                        holder.ratingDisplayTextView.setText("Aceptable");
+                        break;
+                    case 4:
+                        holder.ratingDisplayTextView.setText("Bueno");
+                        break;
+                    case 5:
+                        holder.ratingDisplayTextView.setText("Excelente");
+                        break;
+                    default:
+                        holder.ratingDisplayTextView.setText("Error");
+                        break;
+                }
+
+            }
+        });
+
         /*
         holder.happyIcon.setImageResource(R.drawable.smile_icon);
         holder.neutIcon.setImageResource(R.drawable.neutral_icon);
@@ -71,10 +106,9 @@ public class FeedbackBlocksAdapter extends RecyclerView.Adapter<FeedbackBlocksVi
 class FeedbackBlocksViewHolder extends RecyclerView.ViewHolder {
 
     TextView topic;
-    ImageView happyIcon;
-    ImageView neutIcon;
-    ImageView sadIcon;
 
+    RatingBar ratingBar;
+    TextView ratingDisplayTextView;
 
     public FeedbackBlocksViewHolder(View itemView) {
         super(itemView);
@@ -84,5 +118,7 @@ class FeedbackBlocksViewHolder extends RecyclerView.ViewHolder {
         //happyIcon = (ImageView) itemView.findViewById(R.id.happyIcon);
         //neutIcon = (ImageView)itemView.findViewById(R.id.neutIcon);
         //sadIcon = (ImageView) itemView.findViewById(R.id.sadIcon);
+        ratingBar = (RatingBar) itemView.findViewById(R.id.ratingBar);
+        ratingDisplayTextView = (TextView) itemView.findViewById(R.id.ratingDisplayTextView);
     }
 }

@@ -2,6 +2,7 @@ package com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -25,16 +26,16 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.etsisi.dev.etsisicrowdsensing.CalendarActivity;
-import com.etsisi.dev.etsisicrowdsensing.CandleListActivity;
-import com.etsisi.dev.etsisicrowdsensing.NewIncidence;
-import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.Event;
-import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventDetailActivity;
+import com.etsisi.dev.etsisicrowdsensing.MainActivity;
+import com.etsisi.dev.etsisicrowdsensing.utils.SwipeHelper;
+import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidents.IncidentsAdapter;
+import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidents.NewIncidence;
+import com.etsisi.dev.etsisicrowdsensing.model.Event;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemClickListener;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventsAdapter;
-import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.Incidence;
-import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceDetailActivity;
-import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceItemClickListener;
-import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidencesAdapter;
+import com.etsisi.dev.etsisicrowdsensing.model.Incidence;
+import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidents.IncidenceDetailActivity;
+import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidents.IncidenceItemClickListener;
 import com.etsisi.dev.etsisicrowdsensing.menu.options.FoodActivity;
 import com.etsisi.dev.etsisicrowdsensing.menu.options.MapsActivity;
 import com.etsisi.dev.etsisicrowdsensing.menu.options.NewsActivity;
@@ -44,36 +45,49 @@ import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link CampusFragment.OnFragmentInteractionListener} interface
+ * {@link CampusFragment.OnCampusFragmentInteractionListener} interface
  * to handle interaction events.
  * Use the {@link CampusFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class CampusFragment extends Fragment implements View.OnClickListener,
-                                                        IncidenceItemClickListener,
-                                                        EventItemClickListener{
+        IncidenceItemClickListener,
+        EventItemClickListener {
 
-    private OnFragmentInteractionListener mListener;
+    private static final String TAG = "CampusFragment";
+
+    static final int NEW_INCIDENCE_REQUEST = 1;
+    static final int INCIDENCE_DELETE_REQUEST = 2;
+    private String NEW_INCIDENCE_EXTRA = "new_incidence";
+    private String DELETE_INCIDENCE_EXTRA = "delete_incidence";
+
+
+    private OnCampusFragmentInteractionListener mListener;
+
+    private static final String ARG_INCIDENCES_ARRAY = "incidences-array";
+
 
     private CardView transportCard, foodCard, mapCard, newsCard;
 
-    private  TextView openCalendar;
+    private TextView openCalendar;
 
-    private RecyclerView incidencesRecyclerView;
+    private RecyclerView incidentsRecyclerView;
     private RecyclerView.LayoutManager incidencesLayoutManager;
     private RecyclerView.Adapter incidencesAdapter;
     private ArrayList<Incidence> incidencesDataset;
 
     private RecyclerView eventsRecyclerView;
     private RecyclerView.LayoutManager eventsLayoutManager;
-    private RecyclerView.Adapter eventsAdapter;
+    private EventsAdapter eventsAdapter;
     private ArrayList<Event> eventsDataset;
 
+    private Incidence selectedIncidenceForDetail;
 
     public CampusFragment() {
         // Required empty public constructor
@@ -92,8 +106,26 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
     }
 
     @Override
+    public void onStop() {
+        super.onStop();
+        Log.d(TAG, "Fragment was stopped");
+    }
+
+    @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        if (savedInstanceState != null) {
+            incidencesDataset = savedInstanceState.getParcelableArrayList(ARG_INCIDENCES_ARRAY);
+        } else {
+            incidencesDataset = new ArrayList<Incidence>();
+            /**
+             * Add button bubble incidence
+             * Must be added before recovering incidences from DB
+             */
+            addIncidenceBubble();
+            incidencesDataset.addAll(((MainActivity)getActivity()).getIncidencesDataset());
+        }
     }
 
     @Override
@@ -102,6 +134,19 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
         setHasOptionsMenu(true);
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_campus, container, false);
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        if (savedInstanceState != null)
+            Log.d(TAG, "Hi");
+    }
+
+    @Override
+    public void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList(ARG_INCIDENCES_ARRAY, incidencesDataset);
     }
 
     @Override
@@ -116,6 +161,7 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
 
         eventsRecyclerViewConfig();
 
+        editDeleteRows(eventsRecyclerView);
 
         openCalendar = getActivity().findViewById(R.id.open_calendar_text);
         openCalendar.setOnClickListener(this);
@@ -126,6 +172,18 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
         } catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public void addIncidenceBubble(){
+        Incidence addEvent = new Incidence("Añadir", null, 0, null);
+        incidencesDataset.add(addEvent);
+    }
+
+    public void reloadIncidencesData(){
+        incidencesDataset.clear();
+        addIncidenceBubble();
+        incidencesDataset.addAll(((MainActivity)getActivity()).getIncidencesDataset());
+        incidencesAdapter.notifyDataSetChanged();
     }
 
     public void actionBarConfig() {
@@ -139,32 +197,32 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
     }
 
     public void incidencesRecyclerViewConfig() {
+        // Empty recycler view message
+        // TextView emptyView = getActivity().findViewById(R.id.empty_view);
+
         // Incidences data sample
-        incidencesDataset = new ArrayList<Incidence>();
 
-        Incidence in1 = new Incidence(R.drawable.add_incidence, "Añadir");
-        Incidence in2 = new Incidence(R.drawable.bubble_material, "Material");
-        Incidence in3 = new Incidence(R.drawable.icon_map, "Ambiente");
-        Incidence in4 = new Incidence(R.drawable.icon_food, "Ambiente");
-
-
-        incidencesDataset.add(in1);
-        incidencesDataset.add(in2);
-        incidencesDataset.add(in3);
-        incidencesDataset.add(in4);
-
-        incidencesRecyclerView = (RecyclerView) getView().findViewById(R.id.incidences_recycler_view);
+        incidentsRecyclerView = (RecyclerView) getView().findViewById(R.id.incidences_recycler_view);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        incidencesRecyclerView.setHasFixedSize(true);
+        incidentsRecyclerView.setHasFixedSize(true);
         // use a linear layout manager
         incidencesLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false);
-        incidencesRecyclerView.setLayoutManager(incidencesLayoutManager);
+        incidentsRecyclerView.setLayoutManager(incidencesLayoutManager);
 
         // specify an adapter (see also next example)
-        incidencesAdapter = new IncidencesAdapter(this, incidencesDataset);
-        incidencesRecyclerView.setAdapter(incidencesAdapter);
+        incidencesAdapter = new IncidentsAdapter(getContext(), this, incidencesDataset);
+        incidentsRecyclerView.setAdapter(incidencesAdapter);
+
+        if (incidencesDataset.isEmpty()) {
+            incidentsRecyclerView.setVisibility(View.GONE);
+            //    emptyView.setVisibility(View.VISIBLE);
+        } else {
+            incidentsRecyclerView.setVisibility(View.VISIBLE);
+            //    emptyView.setVisibility(View.GONE);
+        }
+
     }
 
     public void eventsRecyclerViewConfig() {
@@ -178,20 +236,23 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
         eventsDataset.add(ev2);
         eventsDataset.add(ev3);
 
-
         eventsRecyclerView = (RecyclerView) getView().findViewById(R.id.events_recycler_view);
+
+
+        //TextView emptyView = getView().findViewById(R.id.empty_view);
+        //eventsRecyclerView.setEmptyView(emptyView);
 
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
-        eventsRecyclerView.setHasFixedSize(true);
         // use a linear layout manager
         eventsLayoutManager = new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, true);
         eventsRecyclerView.setLayoutManager(eventsLayoutManager);
 
         // specify an adapter (see also next example)
-        eventsAdapter = new EventsAdapter(getContext(),this, eventsDataset);
+        eventsAdapter = new EventsAdapter(getContext(), this, eventsDataset);
         eventsRecyclerView.setAdapter(eventsAdapter);
     }
+
 
     public void cardListeners() {
         // Cards listeners
@@ -227,8 +288,8 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        if (context instanceof OnFragmentInteractionListener) {
-            mListener = (OnFragmentInteractionListener) context;
+        if (context instanceof OnCampusFragmentInteractionListener) {
+            mListener = (OnCampusFragmentInteractionListener) context;
         } else {
             throw new RuntimeException(context.toString()
                     + " must implement OnFragmentInteractionListener");
@@ -259,7 +320,7 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
                 startActivity(i);
                 break;
             case R.id.foodCard:
-                i = new Intent(getActivity(), CandleListActivity.class);
+                i = new Intent(getActivity(), FoodActivity.class);
                 startActivity(i);
                 break;
             case R.id.open_calendar_text:
@@ -283,22 +344,52 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
                 sharedImageView,
                 "bubbleImage");
 
-        if (incidence.getText().equals("Añadir")) {
-            intent = new Intent(getContext(), NewIncidence.class);
-            startActivity(intent);
 
+        if (incidence.getCategory().equals("Añadir")) {
+            intent = new Intent(getContext(), NewIncidence.class);
+            startActivityForResult(intent, NEW_INCIDENCE_REQUEST);
         } else {
+            this.selectedIncidenceForDetail = incidence;
             intent = new Intent(getContext(), IncidenceDetailActivity.class);
             intent.putExtra("incidence", incidence);
-            startActivity(intent, options.toBundle());
+            startActivityForResult(intent, INCIDENCE_DELETE_REQUEST, options.toBundle());
         }
     }
 
     @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == NEW_INCIDENCE_REQUEST) {
+            if (resultCode == getActivity().RESULT_OK) {
+                Incidence newIncidence = data.getParcelableExtra((NEW_INCIDENCE_EXTRA));
+
+                if(mListener.addIncidence(newIncidence)){
+                    Log.d(TAG, "Incidence was successfully added.");
+                    reloadIncidencesData();
+                }
+                else
+                    Log.e(TAG, "Incidence couldn't be added.");
+            }
+        } else if (requestCode == INCIDENCE_DELETE_REQUEST) {
+            if (resultCode == getActivity().RESULT_OK) {
+                if(mListener.deleteIncidence(selectedIncidenceForDetail)){
+                    reloadIncidencesData();
+                    Log.d(TAG, "Incidence was deleted");
+                }
+                else
+                    Log.e(TAG, "Couldn't delete incidence");
+
+            }
+        }
+    }
+
+
+    @Override
     public void onEventItemClick(int pos, Event event) {
         Intent intent;
-        intent = new Intent(getContext(), EventDetailActivity.class);
-        startActivity(intent);
+        // TODO Decide if on touch must be included in the Event Recycler View items
+        //intent = new Intent(getContext(), EventDetailActivity.class);
+        //startActivity(intent);
     }
 
     /**
@@ -311,8 +402,52 @@ public class CampusFragment extends Fragment implements View.OnClickListener,
      * "http://developer.android.com/training/basics/fragments/communicating.html"
      * >Communicating with Other Fragments</a> for more information.
      */
-    public interface OnFragmentInteractionListener {
-        // TODO: Update argument type and name
+    public interface OnCampusFragmentInteractionListener {
         void onFragmentInteraction(Uri uri);
+
+        /**
+         * Incidences data interaction with activity
+         */
+        boolean addIncidence(Incidence incidence);
+        boolean deleteIncidence(Incidence incidence);
+
+
+    }
+
+
+    /**
+     * Event row deletion
+     */
+
+    public void editDeleteRows(RecyclerView recyclerView) {
+        SwipeHelper swipeHelper = new SwipeHelper(getContext(), recyclerView) {
+            @Override
+            public void instantiateUnderlayButton(RecyclerView.ViewHolder viewHolder, List<UnderlayButton> underlayButtons) {
+                underlayButtons.add(new SwipeHelper.UnderlayButton(
+                        "ELIMINAR",
+                        0,
+                        Color.parseColor("#FF3C30"),
+                        new SwipeHelper.UnderlayButtonClickListener() {
+                            @Override
+                            public void onClick(int pos) {
+                                // TODO: onDelete
+                                eventsAdapter.removeItem(pos);
+                            }
+                        }
+                ));
+
+                underlayButtons.add(new SwipeHelper.UnderlayButton(
+                        "EDITAR",
+                        0,
+                        Color.parseColor("#C7C7CB"),
+                        new SwipeHelper.UnderlayButtonClickListener() {
+                            @Override
+                            public void onClick(int pos) {
+                                // TODO: OnUnshare
+                            }
+                        }
+                ));
+            }
+        };
     }
 }

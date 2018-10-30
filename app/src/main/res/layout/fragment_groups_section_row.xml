@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginBottom="10dp"
+    >
+
+    <TextView
+        android:id="@+id/section_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Section label"
+        android:textAppearance="@style/TextAppearance.AppCompat.Widget.Button.Borderless.Colored" />
+
+    <!--  recycler view for subjects -->
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/subjects_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/section_label"
+        tools:listitem="@layout/fragment_groups_subject_row"
+        />
+</RelativeLayout>

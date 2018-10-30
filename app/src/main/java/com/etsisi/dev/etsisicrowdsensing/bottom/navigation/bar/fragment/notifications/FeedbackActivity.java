@@ -7,8 +7,12 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
+import android.widget.RatingBar;
+import android.widget.TextView;
 
 import com.etsisi.dev.etsisicrowdsensing.R;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -45,8 +49,10 @@ public class FeedbackActivity extends AppCompatActivity {
     private void feedbackBlocksRecyclerViewConfig(){
         RecyclerView feedbackBlocksRecyclerView = (RecyclerView) findViewById(R.id.feedback_blocks_recyclerView);
 
-        GridLayoutManager mGridLayoutManager = new GridLayoutManager(this, 2);
-        feedbackBlocksRecyclerView.setLayoutManager(mGridLayoutManager);
+        LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(this,
+                    LinearLayoutManager.VERTICAL, false);
+
+        feedbackBlocksRecyclerView.setLayoutManager(mLinearLayoutManager);
 
         //  This item decoration is used to draw a line under each item in Recyclerview.
         //notificationsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),

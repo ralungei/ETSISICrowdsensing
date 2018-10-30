@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:elevation="3dp"
-        android:layout_margin="15dp"
+        android:layout_margin="5dp"
+
     >
 
         <RelativeLayout
@@ -18,8 +19,10 @@
             <ImageView
                 android:id="@+id/fondo"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
-                app:srcCompat="@color/colorPrimary" />
+                android:layout_height="25dp"
+                app:srcCompat="@color/white"
+
+                />
 
 
             <TextView
@@ -54,63 +57,28 @@
             -->
 
 
+            <RatingBar
+                android:id="@+id/ratingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/topic"
+                android:numStars="5"
+                android:stepSize="1"
+                android:layout_centerHorizontal="true"
 
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@id/fondo"
-                    android:layout_margin="10dp"
-                    >
+                />
 
-                    <RadioButton
-                        android:id="@+id/radioButtonSad"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/feedback_sad_pressable"
-                        android:button="@android:color/transparent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-
-
-                        app:layout_constraintDimensionRatio="1:1"
-                        app:layout_constraintEnd_toStartOf="@+id/radioButtonNeut"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintHorizontal_chainStyle="spread"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <RadioButton
-                        android:id="@+id/radioButtonSmile"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/feedback_smile_pressable"
-                        android:button="@android:color/transparent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintDimensionRatio="1:1"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/radioButtonNeut"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-                    <RadioButton
-                        android:id="@+id/radioButtonNeut"
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:background="@drawable/feedback_neut_pressable"
-                        android:button="@android:color/transparent"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintDimensionRatio="1:1"
-                        app:layout_constraintEnd_toStartOf="@+id/radioButtonSmile"
-                        app:layout_constraintHorizontal_bias="0.5"
-                        app:layout_constraintStart_toEndOf="@+id/radioButtonSad"
-                        app:layout_constraintTop_toTopOf="parent" />
-
-
-                </android.support.constraint.ConstraintLayout>
-
-
+            <TextView
+                android:id="@+id/ratingDisplayTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/ratingBar"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="10dp"
+                android:text="TextView"
+                android:visibility="gone"
+                android:textSize="12dp"
+                />
 
 
         </RelativeLayout>

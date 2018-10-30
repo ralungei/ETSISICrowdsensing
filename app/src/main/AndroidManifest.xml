@@ -16,16 +16,22 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <application
+        android:name=".InitiateVolley"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!-- Bug Fix - Reason - Using app targets API Level 28 (Android 9.0) or above and the Google Maps SDK for Android -->
+        <uses-library android:name="org.apache.http.legacy" android:required="false" />
+
+
+
         <activity
             android:name=".LoginActivity"
             android:label="@string/activity_login"
-            android:windowSoftInputMode="adjustPan">
+            android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -62,8 +68,9 @@
 
         <activity
             android:name=".menu.options.MapsActivity"
-            android:label="@string/title_activity_maps">
+            android:label="@string/title_activity_maps"
             android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.etsisi.dev.etsisicrowdsensing.MainActivity" />
@@ -89,38 +96,24 @@
                 android:value="com.etsisi.dev.etsisicrowdsensing.MainActivity" />
         </activity>
         <activity
-            android:name=".bottom.navigation.bar.fragment.campus.incidences.IncidenceDetailActivity"
+            android:name=".bottom.navigation.bar.fragment.campus.incidents.IncidenceDetailActivity"
             android:label="@string/title_incidence_detail_activity"
-            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.etsisi.dev.etsisicrowdsensing.MainActivity" />
+
         </activity>
-        <activity android:name=".NewIncidence" />
+        <activity android:name=".bottom.navigation.bar.fragment.campus.incidents.NewIncidence" />
         <activity android:name=".bottom.navigation.bar.fragment.campus.events.EventDetailActivity" />
-        <activity android:name=".bottom.navigation.bar.fragment.campus.events.EventItemClickListener" />
-        <activity android:name=".bottom.navigation.bar.fragment.campus.events.EventsAdapter" />
-        <activity android:name=".bottom.navigation.bar.fragment.notifications.FeedbackActivity"
-            android:parentActivityName=".MainActivity"
+        <activity
+            android:name=".bottom.navigation.bar.fragment.notifications.FeedbackActivity"
             android:label="@string/title_activity_feedback"
-            android:theme="@style/AppTheme"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CalendarActivity"
+            android:label="@string/title_activity_calendar"
+            android:parentActivityName=".MainActivity"
             />
-        <activity android:name=".CalendarActivity" />
         <activity android:name=".menu.options.FoodActivity" />
-        <activity
-            android:name=".CandleListActivity"
-            android:label="@string/title_candle_list"
-            android:theme="@style/AppTheme"></activity>
-        <activity
-            android:name=".CandleDetailActivity"
-            android:label="@string/title_candle_detail"
-            android:parentActivityName=".CandleListActivity"
-            android:theme="@style/AppTheme">
-            <meta-data
-                android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.etsisi.dev.etsisicrowdsensing.CandleListActivity" />
-        </activity>
+        <activity android:name=".bottom.navigation.bar.fragment.campus.events.NewEventActivity"></activity>
     </application>
 
 </manifest>

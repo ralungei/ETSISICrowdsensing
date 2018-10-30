@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "Computadores",
+    "year": "2014"
+  },
+  {
+    "id": 2,
+    "title": "Computadores (2009)",
+    "year": "2009"
+  },
+  {
+    "id": 3,
+    "title": "Computadores + TSI",
+    "year": "2014"
+  },
+  {
+    "id": 4,
+    "title": "Sistemas de la información",
+    "year": "2014"
+  },
+  {
+    "id": 5,
+    "title": "Software",
+    "year": "2014"
+  },
+  {
+    "id": 6,
+    "title": "Software (2009)",
+    "year": "2009"
+  },
+  {
+    "id": 7,
+    "title": "Software + TSI",
+    "year": "2014"
+  },
+  {
+    "id": 8,
+    "title": "Técnicas",
+    "year": "2014"
+  },
+  {
+    "id": 9,
+    "title": "Tecnologías para la Sociedad de la información",
+    "year": "2014"
+  }
+]
