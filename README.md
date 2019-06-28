@@ -4,26 +4,25 @@
   </kbd>
 </p>
 
-
 <h3 align="center">Campus</h3>
 
 <p align="center">
   Sleek, intuitive, and powerful app for energy efficiency in University buildings & effective communication with students.
   <br>
-  <a href="https://getbootstrap.com/docs/4.3/"><strong>Explore Bootstrap docs »</strong></a>
+  <a href="https://google.com"><strong>Explore »</strong></a>
   <br>
   <br>
-  <a href="https://github.com/twbs/bootstrap/issues/new?template=bug.md">Report bug</a>
+  <b>User feedback</b>
   ·
-  <a href="https://github.com/twbs/bootstrap/issues/new?template=feature.md&labels=feature">Request feature</a>
+  <b>Facility management</b>
   ·
-  <a href="https://themes.getbootstrap.com/">Themes</a>
+  <b>Connected campus</b>
   ·
-  <a href="https://blog.getbootstrap.com/">Blog</a>
+  <b>Student planner</b>
 </p>
 
 <p align="center">
-  <img width="300" height="100" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/campus_logo.png">
+  <img width="600" height="200" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/campus_logo.png">
 </p>
 
 La aplicación desarrollada hace uso de las técnicas de crowdsensing tanto la satisfacción del usuario mediante herramientas de utilidad en su día a día en su vida universitaria, como la recogida de información de interés de los estudiantes para la retroalimentación del sistema universitario, con el fin de mejorar la experiencia educativa para todos los integrantes del campus.
