@@ -1,5 +1,25 @@
-<h1> App Campus </h1>
-<h2> </h2>
+<p align="center">
+  <a href="https://getbootstrap.com/">
+    <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/image074.png" alt="Campus logo" width="72" height="72">
+  </a>
+</p>
+
+<h3 align="center">Campus</h3>
+
+<p align="center">
+  Sleek, intuitive, and powerful app for energy efficiency in University buildings & effective communication with students.
+  <br>
+  <a href="https://getbootstrap.com/docs/4.3/"><strong>Explore Bootstrap docs »</strong></a>
+  <br>
+  <br>
+  <a href="https://github.com/twbs/bootstrap/issues/new?template=bug.md">Report bug</a>
+  ·
+  <a href="https://github.com/twbs/bootstrap/issues/new?template=feature.md&labels=feature">Request feature</a>
+  ·
+  <a href="https://themes.getbootstrap.com/">Themes</a>
+  ·
+  <a href="https://blog.getbootstrap.com/">Blog</a>
+</p>
 
 La aplicación desarrollada hace uso de las técnicas de crowdsensing tanto la satisfacción del usuario mediante herramientas de utilidad en su día a día en su vida universitaria, como la recogida de información de interés de los estudiantes para la retroalimentación del sistema universitario, con el fin de mejorar la experiencia educativa para todos los integrantes del campus.
 
@@ -17,3 +37,17 @@ Por otra parte, la aplicación incorpora funcionalidades orientadas bidirecciona
     <li>La gestión de incidencias, que permite al usuario informar de problemas relacionados con el material y las instalaciones del centro.</li>
     <li>El envío de informes de opinión y sensación acerca del temario, los profesores, las instalaciones y el estado del estudiante.</li>
 </ul>
+
+
+## Autenticación
+## Configuración de horario
+## Gestión de incidencias
+## Gestión de eventos
+## Mapa
+## Noticias
+## Notificaciones
+## Encuestas
+## Perfil
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/image155.png">
+</div>
