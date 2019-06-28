@@ -1,8 +1,8 @@
-<p align="center">
-  <a href="https://getbootstrap.com/">
-    <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/image074.png" alt="Campus logo" width="72" height="72">
-  </a>
+
+  <p align="center">
+  <img width="100" height="100" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/app_logo.png">
 </p>
+
 
 <h3 align="center">Campus</h3>
 
