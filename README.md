@@ -1,12 +1,19 @@
-# ETSISICrowdsensing
-Mobile application project that offers the advantages of establishing an intelligent campus with agglomeration 
-services as a system of systems that facilitate both teachers and students of the Higher Technical School of 
-Computer Systems Engineering management and administration in the university campus, obtaining information from 
-mobile data that allows optimizing the user experience as well as improving sustainability and energy efficiency 
-on campus.
+<h1> App Campus </h1>
+<h2> </h2>
 
-The application aims to facilitate the obtaining of data about the state of the university facilities as well as 
-the user's experience in the university through a system of surveys based on the scoring of different categories.
-In addition, the information useful for the user is centralized, from the information related to transportation 
-services in the vicinity of the campus, to the information about the dining room menu, the contact information of 
-teachers or the map of the university campus.
+La aplicación desarrollada hace uso de las técnicas de crowdsensing tanto la satisfacción del usuario mediante herramientas de utilidad en su día a día en su vida universitaria, como la recogida de información de interés de los estudiantes para la retroalimentación del sistema universitario, con el fin de mejorar la experiencia educativa para todos los integrantes del campus.
+
+Las funcionalidades que integra la aplicación Campus pueden distinguirse en dos tipos. Por una parte, incorpora funcionalidades orientadas unidireccionalmente al usuario, como son:
+
+<ul style="list-style-type:square;">
+  <li>la disponibilidad de consulta al mapa con las coordenadas establecidas en el campus de la universidad,</li>
+  <li>la posibilidad de consultar las noticias relacionadas con la universidad publicadas en la cuenta de la plataforma Twitter perteneciente al centro docente,</li>
+  <li>la gestión de eventos del usuario, permitiéndole utilizar la aplicación como una agenda electrónica en la que guardar los distintos eventos que tienen lugar durante la vida universitaria.</li>
+</ul>
+  
+Por otra parte, la aplicación incorpora funcionalidades orientadas bidireccionalmente para el usuario y para el centro universitario:
+
+<ul style="list-style-type:square;">
+    <li>La gestión de incidencias, que permite al usuario informar de problemas relacionados con el material y las instalaciones del centro.</li>
+    <li>El envío de informes de opinión y sensación acerca del temario, los profesores, las instalaciones y el estado del estudiante.</li>
+</ul>
