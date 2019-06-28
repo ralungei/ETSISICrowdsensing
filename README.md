@@ -1,8 +1,6 @@
 
-  <p align="center">
-  <kbd>
+<p align="center">
   <img width="100" height="100" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/app_logo.png">
-  </kbd>
 </p>
 
 
@@ -21,6 +19,12 @@
   <a href="https://themes.getbootstrap.com/">Themes</a>
   ·
   <a href="https://blog.getbootstrap.com/">Blog</a>
+</p>
+
+<p align="center">
+  <kbd>
+  <img width="100" height="100" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/app_logo.png">
+  </kbd>
 </p>
 
 La aplicación desarrollada hace uso de las técnicas de crowdsensing tanto la satisfacción del usuario mediante herramientas de utilidad en su día a día en su vida universitaria, como la recogida de información de interés de los estudiantes para la retroalimentación del sistema universitario, con el fin de mejorar la experiencia educativa para todos los integrantes del campus.
