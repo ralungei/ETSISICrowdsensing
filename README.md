@@ -1,6 +1,7 @@
-
 <p align="center">
+  <kbd>
   <img width="100" height="100" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/app_logo.png">
+  </kbd>
 </p>
 
 
