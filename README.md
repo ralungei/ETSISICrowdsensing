@@ -25,7 +25,7 @@
   <img width="600" height="200" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/campus_logo.png">
 </p>
 
-La aplicación desarrollada hace uso de las técnicas de crowdsensing tanto la satisfacción del usuario mediante herramientas de utilidad en su día a día en su vida universitaria, como la recogida de información de interés de los estudiantes para la retroalimentación del sistema universitario, con el fin de mejorar la experiencia educativa para todos los integrantes del campus.
+The application makes use of crowdsensing techniques both user satisfaction through useful tools in their daily life in their university life, as well as collecting feedback from students for the university system, in order to improve the educational experience for all the members of the campus.
 
 Campus integrates two types of functionalities. On the one hand, it incorporates unidirectionally oriented functionalities to the user, such as:
 
