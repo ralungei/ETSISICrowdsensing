@@ -27,31 +27,31 @@
 
 La aplicación desarrollada hace uso de las técnicas de crowdsensing tanto la satisfacción del usuario mediante herramientas de utilidad en su día a día en su vida universitaria, como la recogida de información de interés de los estudiantes para la retroalimentación del sistema universitario, con el fin de mejorar la experiencia educativa para todos los integrantes del campus.
 
-Las funcionalidades que integra la aplicación Campus pueden distinguirse en dos tipos. Por una parte, incorpora funcionalidades orientadas unidireccionalmente al usuario, como son:
+Campus integrates two types of functionalities. On the one hand, it incorporates unidirectionally oriented functionalities to the user, such as:
 
 <ul style="list-style-type:square;">
-  <li>la disponibilidad de consulta al mapa con las coordenadas establecidas en el campus de la universidad,</li>
-  <li>la posibilidad de consultar las noticias relacionadas con la universidad publicadas en la cuenta de la plataforma Twitter perteneciente al centro docente,</li>
-  <li>la gestión de eventos del usuario, permitiéndole utilizar la aplicación como una agenda electrónica en la que guardar los distintos eventos que tienen lugar durante la vida universitaria.</li>
+  <li>map viewing with the coordinates established on the campus of the university,</li>
+  <li>news viewing related to the university published in the account of the Twitter platform belonging to the teaching center,</li>
+  <li>university task lists management</li>
 </ul>
   
-Por otra parte, la aplicación incorpora funcionalidades orientadas bidireccionalmente para el usuario y para el centro universitario:
+On the other hand, the application incorporates bidirectionally oriented functionalities for the user and for the university center:
 
 <ul style="list-style-type:square;">
-    <li>La gestión de incidencias, que permite al usuario informar de problemas relacionados con el material y las instalaciones del centro.</li>
-    <li>El envío de informes de opinión y sensación acerca del temario, los profesores, las instalaciones y el estado del estudiante.</li>
+    <li>Incident management, which allows the user to report problems related to the center's material and facilities.</li>
+    <li>Feedback on the subjects, teachers, facilities and the student's status.</li>
 </ul>
 
 
-## Autenticación
-## Configuración de horario
-## Gestión de incidencias
-## Gestión de eventos
-## Mapa
-## Noticias
-## Notificaciones
-## Encuestas
-## Perfil
+## Authentication
+## Schedule setting
+## Incidents management
+## Student planner
+## Map
+## News
+## Reminders
+## Feedback
+## Profile
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/image155.png">
 </div>
