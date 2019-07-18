@@ -145,13 +145,11 @@ public class PlanWizardFragment extends Fragment {
                     spinnerArray.add(data.child("descripcion").getValue().toString());
                 }
             }
-
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
                 Log.e("ERROR FIREBASE", databaseError.getMessage());
             }
         });
-
         Log.d("ArrayLIST","Datos de la BD " + spinnerArray.isEmpty());
 */
     }

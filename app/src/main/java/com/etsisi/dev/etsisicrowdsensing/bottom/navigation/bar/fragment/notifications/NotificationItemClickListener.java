@@ -1,7 +1,7 @@
 package com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications;
 
-import com.etsisi.dev.etsisicrowdsensing.model.Notification;
+import com.etsisi.dev.etsisicrowdsensing.model.FeedbackForm;
 
 public interface NotificationItemClickListener {
-    void onNotificationItemClick(int pos, Notification notification);
+    void onFeedbackNotificationItemClick(int pos, FeedbackForm notification);
 }

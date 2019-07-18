@@ -5,20 +5,11 @@ import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.app.LoaderManager.LoaderCallbacks;
-
-import android.content.CursorLoader;
-import android.content.Loader;
-import android.database.Cursor;
-import android.net.Uri;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -30,7 +21,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputMethodManager;
-import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -40,6 +30,8 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
@@ -53,12 +45,8 @@ import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-
-import static android.Manifest.permission.READ_CONTACTS;
 
 /**
  * A login screen that offers login via email/password.
@@ -75,7 +63,7 @@ public class LoginActivity extends AppCompatActivity{
      */
     private FirebaseAuth mAuth;
 
-    private FirebaseFirestore db;
+    private FirebaseFirestore dbFirestore;
 
 
     // UI references.
@@ -116,7 +104,7 @@ public class LoginActivity extends AppCompatActivity{
         loadLogoImage();
 
         // Get database connection
-        db = FirebaseFirestore.getInstance();
+        dbFirestore = FirebaseFirestore.getInstance();
 
         // Set up the login form.
         mEmailView = (AutoCompleteTextView) findViewById(R.id.email);
@@ -244,9 +232,29 @@ public class LoginActivity extends AppCompatActivity{
 
         mAuth = FirebaseAuth.getInstance();
 
+        showProgress(true);
         // COMMENT/UNCOMMENT FOR USER REMEMBER
         //signOut();
     }
+
+
+    @Override
+    public void onStart() {
+        super.onStart();
+        // Check if user is signed in (non-null) and update UI accordingly.
+   /*     mAuth.addAuthStateListener(firebaseAuth -> {
+            if (mAuth.getCurrentUser() == null)
+            //User not logged
+                mAuth.signOut();
+        });*/
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+        updateUI(currentUser);
+
+
+
+
+    }
+
 
 
     // Load Logo ImageView using Glide Library
@@ -257,14 +265,6 @@ public class LoginActivity extends AppCompatActivity{
                 .with(this)
                 .load(logoResourceId)
                 .into(imageView);
-    }
-
-    @Override
-    public void onStart() {
-        super.onStart();
-        // Check if user is signed in (non-null) and update UI accordingly.
-        FirebaseUser currentUser = mAuth.getCurrentUser();
-        updateUI(currentUser);
     }
 
 
@@ -515,6 +515,7 @@ public class LoginActivity extends AppCompatActivity{
                                 mEmailView.requestFocus();
                             } catch (Exception e) {
                                 Log.e(TAG, e.getMessage());
+                                showProgress(false);
                             }
 
 
@@ -567,18 +568,36 @@ public class LoginActivity extends AppCompatActivity{
                             //Toast.makeText(LoginActivity.this, "Account creation succeeded.",Toast.LENGTH_SHORT).show();
 
                             // Add a new document with a generated id.
+                            // TODO Save User Id and Email in Mongo
+
+
                             Map<String, Object> data = new HashMap<>();
                             data.put("email", user.getEmail());
+                            CollectionReference usersCollectionRef = dbFirestore.collection("users");
+                            usersCollectionRef
+                                    .document(user.getUid())
+                                    .set(data)
+                                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                        @Override
+                                        public void onSuccess(Void aVoid) {
+                                            Log.d(TAG, "User id successfully written into Firestore Database!");
+                                        }
+                                    })
+                                    .addOnFailureListener(new OnFailureListener() {
+                                        @Override
+                                        public void onFailure(@NonNull Exception e) {
+                                            Log.w(TAG, "User id couln't be written into Firestore Database!", e);
 
-                            CollectionReference usersCollectionRef = db.collection("users");
-                            usersCollectionRef.document(user.getUid()).set(data);
+                                        }
+                                    });
 
                             // Send email verification
                             user.sendEmailVerification().addOnCompleteListener(LoginActivity.this, new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()) {
-                                        Toast.makeText(LoginActivity.this, "Verification email sent to " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                                        // TODO Mensaje informando al usuario de que se ha enviado un email de verificación
+                                        Toast.makeText(LoginActivity.this, "Se ha enviado un email de verificación a la cuenta " + user.getEmail(), Toast.LENGTH_SHORT).show();
                                     } else {
                                         Log.e(TAG, "sendEmailVerification", task.getException());
                                         /**
@@ -644,27 +663,25 @@ public class LoginActivity extends AppCompatActivity{
 
 
             // check user has completed starting form
-            DocumentReference docRef = db.collection("users").document(user.getUid());
+            DocumentReference docRef = dbFirestore.collection("users").document(user.getUid());
             docRef.get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
                 @Override
                 public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                     if (task.isSuccessful()) {
                         DocumentSnapshot document = task.getResult();
                         Intent intent;
-                        // TODO Check if user has a schedule. If not start UserScheduleActivity
-                        // TODO Reverse conditions activities
+                        // Check if user has a schedule. If not start UserScheduleActivity
                         if (document.get("plan") != null) {
                             intent = new Intent(LoginActivity.this, MainActivity.class);
                         } else {
-                            // intent = new Intent(LoginActivity.this, UserScheduleActivity.class);
-                            intent = new Intent(LoginActivity.this, MainActivity.class);
-                            // Uncomment to implement user scheduling
-                            //intent = new Intent(LoginActivity.this, UserScheduleActivity.class);
+                            intent = new Intent(LoginActivity.this, UserScheduleActivity.class);
                         }
+                        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                         startActivity(intent);
-                        LoginActivity.this.finish();
-
+                        overridePendingTransition( R.anim.slide_in_up, R.anim.slide_out_up );
+                        finish();
                     } else {
+                        showProgress(false);
                         Log.d(TAG, "get failed with ", task.getException());
                     }
                 }
@@ -680,8 +697,8 @@ public class LoginActivity extends AppCompatActivity{
 
             //findViewById(R.id.verify_email_button).setEnabled(!user.isEmailVerified());
         } else {
-            Log.e(TAG, "Error updating UI but user is not logged");
-
+            Log.d(TAG, "Updating UI but user is no longer logged");
+            showProgress(false);
             /* Contraseña incorrecta alert
             // 1. Instantiate an AlertDialog.Builder with its constructor
             AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);

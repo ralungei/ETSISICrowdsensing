@@ -72,7 +72,7 @@ public class NotificationsAdapter extends RecyclerView.Adapter<RecyclerView.View
             btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    notificationItemClickListener.onNotificationItemClick(holder.getAdapterPosition(), new Notification(1, "b", "22:00", "b"));
+                    notificationItemClickListener.onFeedbackNotificationItemClick(holder.getAdapterPosition(), (FeedbackForm) mDataset.get(position));
                 }
             });
         } else if (itemType == ITEM_TYPE_TRANSPORT) {
@@ -131,7 +131,7 @@ class FeedbackNotificationViewHolder extends RecyclerView.ViewHolder {
     public void bindData(FeedbackForm model) {
         descriptionTextView.setText("Por favor, cuéntanos tu experiencia en la clase " + model.getSubject().getTitle());
 
-        SimpleDateFormat dateFormat = new SimpleDateFormat("hh:mm");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("HH:mm");
         Date startDate = model.getDate();
         int duration = model.getDuration();
         Calendar calendar = Calendar.getInstance();

@@ -6,14 +6,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context=".bottom.navigation.bar.fragment.campus.incidents.NewIncidence"
-    tools:layout_editor_absoluteY="81dp"
+    tools:context=".bottom.navigation.bar.fragment.campus.incidences.NewIncidenceActivity"
     tools:showIn="@layout/activity_new_incidence">
 
 
     <TextView
         android:id="@+id/titleCategory"
-        android:layout_width="352dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -27,7 +26,7 @@
 
     <RadioGroup
         android:id="@+id/categoryGroup"
-        android:layout_width="352dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
@@ -46,10 +45,10 @@
             android:background="@null"
             android:button="@android:color/transparent"
             android:checked="true"
-            android:textAllCaps="true"
             android:drawableTop="@drawable/material_selector_radio_button"
             android:gravity="center"
             android:text="@string/incidence_material_category"
+            android:textAllCaps="true"
             android:textSize="12sp" />
 
         <RadioButton
@@ -60,9 +59,9 @@
             android:background="@null"
             android:button="@android:color/transparent"
             android:drawableTop="@drawable/atmosphere_selector_radio_button"
-            android:textAllCaps="true"
             android:gravity="center"
             android:text="@string/incidence_atmosphere_category"
+            android:textAllCaps="true"
             android:textSize="12sp" />
 
         <RadioButton
@@ -73,9 +72,9 @@
             android:background="@null"
             android:button="@android:color/transparent"
             android:drawableTop="@drawable/facilities_selector_radio_button"
-            android:textAllCaps="true"
             android:gravity="center"
             android:text="@string/incidence_facilities_category"
+            android:textAllCaps="true"
             android:textSize="12sp" />
     </RadioGroup>
 
@@ -133,12 +132,12 @@
         app:layout_constraintTop_toBottomOf="@+id/cause_question" />
 
     <RadioGroup
-        android:id="@+id/locationGroup"
+        android:id="@+id/locationRadioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toStartOf="@+id/numberView"
+        app:layout_constraintEnd_toStartOf="@+id/numberTextView"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintHorizontal_chainStyle="packed"
         app:layout_constraintStart_toStartOf="parent"
@@ -163,7 +162,7 @@
     </RadioGroup>
 
     <EditText
-        android:id="@+id/numberView"
+        android:id="@+id/numberTextView"
         android:layout_width="65dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -173,17 +172,17 @@
         android:inputType="number"
         android:textSize="14sp"
         android:maxLength="4"
-        app:layout_constraintBottom_toTopOf="@+id/locationGroup"
+        app:layout_constraintBottom_toTopOf="@+id/locationRadioGroup"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/locationGroup"
-        app:layout_constraintTop_toBottomOf="@+id/locationGroup" />
+        app:layout_constraintStart_toEndOf="@+id/locationRadioGroup"
+        app:layout_constraintTop_toBottomOf="@+id/locationRadioGroup" />
 
     <Button
         android:id="@+id/addBtn"
         style="@style/primaryButtonStyle"
-        android:layout_width="168dp"
-        android:layout_height="48dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
@@ -197,7 +196,7 @@
         android:id="@+id/cancelBtn"
         style="@style/Widget.AppCompat.Button.Borderless.Colored"
         android:layout_width="wrap_content"
-        android:layout_height="46dp"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
         android:layout_marginStart="8dp"
         android:text="@string/material_calendar_negative_button"

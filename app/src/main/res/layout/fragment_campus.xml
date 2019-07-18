@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/campus_fragment"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/campus_fragment"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingBottom="@dimen/bottom_navigation_height"
@@ -27,113 +27,201 @@
                 android:id="@+id/action_bar_logo"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="17dp" />
+                android:layout_margin="17dp"
+                android:contentDescription="@string/content_description_logo" />
 
         </android.support.v7.widget.Toolbar>
     </android.support.design.widget.AppBarLayout>
 
 
-        <LinearLayout
-            android:id="@+id/recyclers"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toTopOf="@id/menu"
-            app:layout_constraintTop_toBottomOf="@id/app_bar"
-            >
+    <android.support.v7.widget.CardView
+        android:id="@+id/incidences_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_bar">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/incidences_layout"
-                android:layout_width="match_parent"
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/claims_title"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="10dp"
-                app:cardBackgroundColor="@color/white">
+                android:text="@string/incidents"
+                android:textColor="@color/tw__composer_black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
 
-
-                <RelativeLayout
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/claims_title"
+                android:layout_alignTop="@id/incidences_recycler_view"
+                android:layout_alignBottom="@id/incidences_recycler_view"
+                android:layout_marginBottom="10dp"
+                >
+                <ProgressBar
+                    android:id="@+id/incidencesProgressBar"
+                    style="?android:attr/progressBarStyleHorizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="10dp">
-
-                    <TextView
-                        android:id="@+id/claims_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/incidents"
-                        android:textColor="@color/tw__composer_black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/incidences_recycler_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/claims_title" />
-                </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:indeterminateTint="@color/lightGray"
+                    android:layout_centerInParent="true"
+                    android:visibility="gone" />
+            </RelativeLayout>
 
 
-            </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/events_layout"
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/incidences_recycler_view"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:cardBackgroundColor="@color/white"
-                android:layout_marginBottom="2dp"
+                android:layout_below="@id/claims_title"
+                android:layout_marginBottom="5dp"
+                app:layoutManager="android.support.v7.widget.LinearLayoutManager"
+                android:orientation="horizontal"
+                tools:listitem="@layout/incidence_row"
+                />
+        </RelativeLayout>
+
+
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/events_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginBottom="24dp"
+        android:layout_marginTop="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constrainedHeight="true"
+        app:layout_constraintBottom_toTopOf="@+id/menu"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/incidences_layout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:paddingTop="10dp">
+
+            <TextView
+                android:id="@+id/events_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_marginBottom="10dp"
+                android:text="@string/next_events_label"
+                android:textColor="@color/tw__composer_black"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+
+            <RelativeLayout
+                android:id="@+id/new_event"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/events_title"
                 >
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:paddingBottom="5dp"
-                    android:paddingLeft="15dp"
-                    android:paddingRight="15dp"
-                    android:paddingTop="10dp">
+                <ImageView
+                    android:id="@+id/calendar_icon"
+                    android:layout_width="15dp"
+                    android:layout_height="15dp"
+                    android:layout_toStartOf="@id/new_event_text"
+                    android:layout_alignTop="@id/new_event_text"
+                    android:layout_alignBottom="@id/new_event_text"
+                    android:contentDescription="@string/content_description_new_event_icon"
+                    android:src="@android:drawable/ic_input_add" />
 
-                    <TextView
-                        android:id="@+id/events_title"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentStart="true"
-                        android:layout_marginBottom="10dp"
-                        android:text="@string/next_events"
-                        android:textColor="@color/tw__composer_black"
-                        android:textSize="15sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/new_event_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:text="@string/new_event_button"
+                    android:textSize="12sp"
+                    android:textColor="@color/colorPrimary"
+                    />
 
-                    <ImageView
-                        android:id="@+id/calendar_icon"
-                        android:layout_width="15dp"
-                        android:layout_height="15dp"
-                        android:layout_alignBottom="@id/events_title"
-                        android:layout_toLeftOf="@id/open_calendar_text"
-                        android:src="@android:drawable/ic_menu_my_calendar" />
-
-                    <android.support.v7.widget.RecyclerView
-                        android:id="@+id/events_recycler_view"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/events_title" />
-
-                    <TextView
-                        android:id="@+id/open_calendar_text"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignBottom="@id/events_title"
-                        android:layout_alignParentEnd="true"
-                        android:text="@string/your_calendar"
-                        android:textSize="12sp" />
+            </RelativeLayout>
 
 
-                </RelativeLayout>
-            </android.support.v7.widget.CardView>
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/events_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/events_title"
+                tools:listitem="@layout/event_row"
+                />
 
-        </LinearLayout>
 
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/empty_events_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@id/events_title"
+                android:gravity="center"
+                android:visibility="gone">
+
+                <TextView
+                    android:id="@+id/empty_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginStart="8dp"
+                    android:gravity="center"
+                    android:lines="3"
+                    android:text="Crea tu lista de recordatorios añadiendo tus exámenes, presentaciones o entregas."
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/alarm_image" />
+
+                <ImageView
+                    android:id="@+id/alarm_image"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="8dp"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/empty_text"
+                    app:layout_constraintDimensionRatio="1:1"
+                    app:layout_constraintHeight_max="35dp"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.39999998"
+                    app:layout_constraintVertical_chainStyle="packed"
+                    app:layout_constraintWidth_max="35dp"
+                    app:srcCompat="@drawable/alarm_clock" />
+            </android.support.constraint.ConstraintLayout>
+
+
+
+
+
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
 
     <RelativeLayout
         android:id="@+id/menu"
@@ -144,23 +232,5 @@
 
         <include layout="@layout/content_menu" />
     </RelativeLayout>
-
-
-    <!--
-    <GridView
-        android:id="@+id/gridview"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:columnWidth="155dp"
-        android:gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="15dp"
-        android:horizontalSpacing="2dp"
-        android:numColumns="2"
-        android:stretchMode="spacingWidthUniform"
-        android:verticalSpacing="15dp" />
-    -->
-
 
 </android.support.constraint.ConstraintLayout>

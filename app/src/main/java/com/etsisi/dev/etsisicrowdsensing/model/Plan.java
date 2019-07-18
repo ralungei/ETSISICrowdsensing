@@ -3,10 +3,16 @@ package com.etsisi.dev.etsisicrowdsensing.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Plan implements Parcelable{
+import com.google.gson.annotations.SerializedName;
 
+public class Plan implements Parcelable{
+    @SerializedName("internalId")
+    private String internalId;
+    @SerializedName("id")
     private int id;
+    @SerializedName("titulo")
     private String title;
+    @SerializedName("año")
     private int year;
 
     public Plan(int id, String title, int año){

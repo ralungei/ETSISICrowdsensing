@@ -108,7 +108,7 @@ public class NameWizardFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 if(mNameSubmittedListener != null)
-                    mNameSubmittedListener.onNameSubmitted(userName);
+                    mNameSubmittedListener.onNameSubmitted(upperCaseWords(userName));
                 ((UserScheduleActivity) getActivity()).onNextPressed();
             }
         });
@@ -161,6 +161,22 @@ public class NameWizardFragment extends Fragment {
     public void hideKeyboard(View view) {
         InputMethodManager inputMethodManager =(InputMethodManager) getActivity().getSystemService(Activity.INPUT_METHOD_SERVICE);
         inputMethodManager.hideSoftInputFromWindow(view.getWindowToken(), 0);
+    }
+
+
+    public static String upperCaseWords(String sentence) {
+        String words[] = sentence.replaceAll("\\s+", " ").trim().split(" ");
+        String newSentence = "";
+        for (String word : words) {
+            for (int i = 0; i < word.length(); i++)
+                newSentence = newSentence + ((i == 0) ? word.substring(i, i + 1).toUpperCase(): (i != word.length() - 1) ? word.substring(i, i + 1).toLowerCase() : word.substring(i, i + 1).toLowerCase().toLowerCase());
+            newSentence += " ";
+        }
+
+
+        newSentence = newSentence.substring(0, newSentence.length() - 1);
+
+        return newSentence;
     }
 
     /**

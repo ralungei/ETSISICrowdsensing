@@ -10,16 +10,22 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 
 import com.etsisi.dev.etsisicrowdsensing.R;
+import com.hsalf.smilerating.BaseRating;
+import com.hsalf.smilerating.SmileRating;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class FeedbackBlocksAdapter extends RecyclerView.Adapter<FeedbackBlocksViewHolder>{
 
-    private ArrayList<String> mTopics;
+    private List<String> mTopics;
+    private final FeedbackStateClickListener feedbackStateClickListener;
 
-    public FeedbackBlocksAdapter(ArrayList<String> mTopics){
+
+    public FeedbackBlocksAdapter(List<String> mTopics, FeedbackStateClickListener feedbackStateClickListener){
         this.mTopics = mTopics;
+        this.feedbackStateClickListener = feedbackStateClickListener;
     }
 
 
@@ -38,61 +44,24 @@ public class FeedbackBlocksAdapter extends RecyclerView.Adapter<FeedbackBlocksVi
 
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
-        holder.topic.setText(mTopics.get(position));
+        String topicTitle = mTopics.get(position);
+        holder.topic.setText(topicTitle);
 
 
 
-
-        holder.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+        holder.smileRatingBar.setOnRatingSelectedListener(new SmileRating.OnRatingSelectedListener() {
             @Override
-            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                if(holder.ratingDisplayTextView.getVisibility() == View.GONE)
-                    holder.ratingDisplayTextView.setVisibility(View.VISIBLE);
-
-                switch(Math.round(rating)) {
-                    case 1:
-                        holder.ratingDisplayTextView.setText("Muy malo");
-                        break;
-                    case 2:
-                        holder.ratingDisplayTextView.setText("Malo");
-                        break;
-                    case 3:
-                        holder.ratingDisplayTextView.setText("Aceptable");
-                        break;
-                    case 4:
-                        holder.ratingDisplayTextView.setText("Bueno");
-                        break;
-                    case 5:
-                        holder.ratingDisplayTextView.setText("Excelente");
-                        break;
-                    default:
-                        holder.ratingDisplayTextView.setText("Error");
-                        break;
-                }
-
+            public void onRatingSelected(int level, boolean reselected) {
+                // level is from 1 to 5 (0 when none selected)
+                // reselected is false when user selects different smiley that previously selected one
+                // true when the same smiley is selected.
+                // Except if it first time, then the value will be false.
+                feedbackStateClickListener.onFeedbackStateItemClick(topicTitle, level);
             }
         });
 
-        /*
-        holder.happyIcon.setImageResource(R.drawable.smile_icon);
-        holder.neutIcon.setImageResource(R.drawable.neutral_icon);
-        holder.sadIcon.setImageResource(R.drawable.sad_icon);
-        */
 
-        /* DISCOMMENT
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                v.setActivated(!v.isActivated());
-            }
-        };
 
-        holder.happyIcon.setOnClickListener(listener);
-
-        holder.neutIcon.setOnClickListener(listener);
-
-        holder.sadIcon.setOnClickListener(listener);
-    */
     }
 
     @Override
@@ -100,15 +69,17 @@ public class FeedbackBlocksAdapter extends RecyclerView.Adapter<FeedbackBlocksVi
         return mTopics.size();
     }
 
+    interface FeedbackStateClickListener {
+        void onFeedbackStateItemClick(String topic, int level);
+
+    }
 
 }
 
 class FeedbackBlocksViewHolder extends RecyclerView.ViewHolder {
 
     TextView topic;
-
-    RatingBar ratingBar;
-    TextView ratingDisplayTextView;
+    SmileRating smileRatingBar;
 
     public FeedbackBlocksViewHolder(View itemView) {
         super(itemView);
@@ -118,7 +89,9 @@ class FeedbackBlocksViewHolder extends RecyclerView.ViewHolder {
         //happyIcon = (ImageView) itemView.findViewById(R.id.happyIcon);
         //neutIcon = (ImageView)itemView.findViewById(R.id.neutIcon);
         //sadIcon = (ImageView) itemView.findViewById(R.id.sadIcon);
-        ratingBar = (RatingBar) itemView.findViewById(R.id.ratingBar);
-        ratingDisplayTextView = (TextView) itemView.findViewById(R.id.ratingDisplayTextView);
+        smileRatingBar = (SmileRating) itemView.findViewById(R.id.ratingBar);
     }
 }
+
+
+

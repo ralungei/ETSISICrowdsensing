@@ -1,6 +1,6 @@
 <resources>
 
-    <string name="activity_login">Smart Campus</string>
+    <string name="activity_login">Campus</string>
 
     <string name="prompt_email">Correo UPM</string>
     <string name="prompt_password">Contraseña</string>
@@ -17,12 +17,12 @@
     <string name="permission_rationale">"Contacts permissions are needed for providing email
         completions."
     </string>
-    <string name="app_name">Smart Campus</string>
+    <string name="app_name">Campus</string>
     <string name="prompt_no_account_message">¿No tienes una cuenta?</string>
     <string name="action_text_register">Regístrate</string>
     <string name="prompt_yes_account_message">¿Ya tienes una cuenta?</string>
     <string name="action_login">Entrar</string>
-    <string name="alert_login_fail_message">La contraseña que has escrito no es correcta. Vuelve a intentarlo.</string>
+    <string name="alert_login_fail_message">La contraseña no es correcta. Vuelve a intentarlo.</string>
     <string name="alert_login_fail_title">Contraseña incorrecta</string>
     <string name="ok">OK</string>
     <string name="next">Siguiente</string>
@@ -78,6 +78,7 @@
         <item>Diciembre</item>
     </array>
 
+
     <array name="mcv_weekDayLabels">
         <item>lun</item>
         <item>mar</item>
@@ -88,21 +89,65 @@
         <item>dom</item>
     </array>
 
-    <array name="cursos_array">
-        <item>Primero</item>
-        <item>Segundo</item>
-        <item>Tercero</item>
-        <item>Cuarto</item>
-    </array>
+    <string-array name="feedback_categories_array">
+        <item>Tu estado</item>
+        <item>Temario</item>
+        <item>Docente</item>
+        <item>Ambiente</item>
+    </string-array>
+
+
+    <string-array name="tuestado_array">
+        <item>Hambre</item>
+        <item>Malestar</item>
+        <item>Estrés</item>
+        <item>Agotamiento</item>
+        <item>Dolor de espalda</item>
+        <item>Aburrimiento</item>
+    </string-array>
+
+    <string-array name="temario_array">
+        <item>Repetitivo</item>
+        <item>Poco práctico</item>
+        <item>Material limitado</item>
+        <item>Temario denso</item>
+    </string-array>
+
+
+    <string-array name="docente_array">
+        <item>Poco paciente</item>
+        <item>Explicaciones aburridas</item>
+        <item>Poco cooperativo</item>
+        <item>Desorganizado</item>
+        <item>Poco creativo</item>
+        <item>Poco dinámico</item>
+    </string-array>
+
+
+    <string-array name="ambiente_array">
+        <item>Demasiado calor</item>
+        <item>Demasiado frío</item>
+        <item>Demasiado ruido</item>
+        <item>Poca luz</item>
+    </string-array>
+
+    <string name="smile_rating_terrible">Muy mal</string>
+    <string name="smile_rating_bad">Malamente</string>
+    <string name="smile_rating_okay">Regular</string>
+    <string name="smile_rating_good">Bien</string>
+    <string name="smile_rating_great">Muy bien</string>
+
+
+    <string name="event_kind_map">{0:"Entrega",1:"Examen",2:"Presentacion"}</string>
 
 
     <string name="material_calendar_today_button">Hoy</string>
     <string name="material_calendar_positive_button">OK</string>
     <string name="material_calendar_negative_button">Cancelar</string>
     <string name="title_activity_calendar">Calendario</string>
-    <string name="no_data_available">No tienes ningún evento próximamente</string>
+    <string name="no_event_data_available">No tienes ningún evento próximamente</string>
     <string name="your_calendar">Tu calendario</string>
-    <string name="next_events">Eventos próximos</string>
+    <string name="next_events_label">Eventos próximos</string>
     <string name="incidents">Incidencias</string>
     <string name="welcome_to_campus">¡Bienvenido a Campus!</string>
     <string name="finish">Finalizar</string>
@@ -110,7 +155,7 @@
     <string name="select_your_groups">Selecciona tus grupos</string>
     <string name="step_5_of_5">Paso 5 de 5</string>
     <string name="error_user_exists">Otra cuenta usa este correo electrónico.</string>
-    <string name="incorrect_password">La contraseña que has escrito no es correcta. Vuelve a intentarlo.</string>
+    <string name="incorrect_password">Contraseña incorrecta. Vuelve a intentarlo.</string>
     <string name="incorrect_email">No existe una cuenta asociada al correo introducido o está desactivada.</string>
     <string name="introduce_name">Antes de empezar, dínos cómo te llamas</string>
     <string name="name">Nombre</string>
@@ -122,7 +167,7 @@
     <string name="new_incidence_damaged_question">¿Qué está dañado?</string>
 
     <string name="incidence_detail_problem_prompt">Sensación</string>
-     <string name="incidence_detail_damaged_run_out_prompt">Elemento dañado o agotado</string>
+    <string name="incidence_detail_damaged_run_out_prompt">Elemento dañado o agotado</string>
     <string name="incidence_detail_damaged_prompt">Elemento dañado</string>
 
     <string name="incidence_material_category">Material</string>
@@ -132,7 +177,7 @@
     <string name="bloque">Bloque</string>
     <string name="aula">Aula</string>
     <string name="incidence_under_revision">La incidencia está en proceso de revisión</string>
-    <string name="incidence_checked">La incidencia ha sido revisada. Pronto se tomarán medidas.</string>
+    <string name="incidence_checked">La incidencia ha sido revisada. Pronto se tomarán medidas. ¡Muchas gracias!</string>
     <string name="category_prompt">Categoría</string>
     <string name="question_problem_root_prompt">Question</string>
     <string name="location_kind_aula_prompt">Aula</string>
@@ -140,5 +185,16 @@
     <string name="number_hint">Número</string>
     <string name="where_prompt">¿Dónde?</string>
     <string name="delete">Eliminar</string>
+    <string name="exam_label">Examen</string>
+    <string name="presentation_label">Presentación</string>
+    <string name="schoolwork_label">Entrega</string>
+    <string name="event_delivery_kind_prompt">Moodle</string>
+    <string name="content_description_logo">App Logo Campus</string>
+    <string name="content_description_new_event_icon">New Event Icon</string>
+    <string name="new_event_button">Nuevo evento</string>
+    <string name="incidence_deletion_confirmation">¿Estás seguro de que deseas eliminar la incidencia?</string>
+    <string name="event_deletion_confirmation">¿Estás seguro de que quieres eliminar el evento?</string>
+    <string name="title_activity_food">Comedor</string>
+    <string name="action_settings">Ajustes</string>
 
 </resources>

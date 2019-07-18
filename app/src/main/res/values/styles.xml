@@ -10,6 +10,8 @@
         <!-- enable window content transitions -->
         <item name="android:windowContentTransitions">true</item>
 
+        <item name="actionOverflowMenuStyle">@style/MyOverflowMenu</item>
+
         <!-- The Color of the Status bar -->
         <!--<item name="android:windowTranslucentStatus">true</item>-->
 
@@ -18,12 +20,23 @@
 
     </style>
 
+    <style name="CustomDatePickerDialogTheme" parent="android:Theme.Material.Light.Dialog">
+        <item name="android:datePickerStyle">@style/MyDatePickerStyle</item>
+    </style>
+
+    <style name="MyDatePickerStyle" parent="@android:style/Widget.Material.DatePicker">
+        <item name="android:datePickerMode">calendar</item>
+    </style>
+
+    <style name="MyOverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow" >
+        <item name="overlapAnchor">false</item>
+        <item name="android:dropDownVerticalOffset">-4.0dip</item>
+    </style>
+
     <style name="Custom.ActionBarTheme" parent="@style/ThemeOverlay.AppCompat.ActionBar">
         <!-- THIS is where you can color the arrow! -->
         <item name="colorControlNormal">@color/black</item>
     </style>
-
-
 
     <style name="BottomNavigation">
         <item name="android:background">#d7d7d7</item>

@@ -1,14 +1,19 @@
 package com.etsisi.dev.etsisicrowdsensing.model;
 
-public class Voting {
-    private String category;
-    private String result;
-    private String[] reasons;
+import com.google.gson.annotations.SerializedName;
 
-    public Voting(String category, String result, String[] reasons){
+public class Voting {
+    @SerializedName("categoria")
+    private String category;
+    @SerializedName("puntuacion")
+    private int score;
+    @SerializedName("razon")
+    private String reason;
+
+    public Voting(String category){
         this.category = category;
-        this.result = result;
-        this.reasons = reasons;
+        this.score = -1;
+        this.reason = "";
     }
 
     public String getCategory() {
@@ -19,19 +24,19 @@ public class Voting {
         this.category = category;
     }
 
-    public String getResult() {
-        return result;
+    public int getScore() {
+        return score;
     }
 
-    public void setResult(String result) {
-        this.result = result;
+    public void setScore(int score) {
+        this.score = score;
     }
 
-    public String[] getReasons() {
-        return reasons;
+    public String getReason() {
+        return reason;
     }
 
-    public void setReasons(String[] reasons) {
-        this.reasons = reasons;
+    public void setReason(String reasons) {
+        this.reason = reasons;
     }
 }

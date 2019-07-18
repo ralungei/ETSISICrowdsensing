@@ -17,9 +17,10 @@
 
 
     <color name="red">#F4511E</color>
-    <color name="orange">#ffce29</color>
+    <color name="orange">#fbce3d</color>
+    <color name="darkOrange">#eab812</color>
     <color name="purple">#673AB7</color>
-    <color name="green">#78cf2d</color>
+    <color name="green">#84cd3c</color>
     <color name="dark_gray">#607D8B</color>
 
 

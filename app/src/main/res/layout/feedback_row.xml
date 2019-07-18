@@ -14,6 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:gravity="center"
+            android:padding="4dp"
             >
 
             <ImageView
@@ -32,10 +33,11 @@
                 android:text="Tú estado"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                android:layout_centerHorizontal="true"
+                android:layout_marginBottom="5dp"
 
-                android:layout_alignLeft="@id/fondo"
-                android:layout_alignRight="@id/fondo"
+                android:layout_centerHorizontal="true"
+                android:layout_alignStart="@id/fondo"
+                android:layout_alignEnd="@id/fondo"
                 android:layout_alignTop="@id/fondo"
                 android:layout_alignBottom="@id/fondo"
                 android:gravity="center"
@@ -57,7 +59,7 @@
             -->
 
 
-            <RatingBar
+            <com.hsalf.smilerating.SmileRating
                 android:id="@+id/ratingBar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -65,20 +67,9 @@
                 android:numStars="5"
                 android:stepSize="1"
                 android:layout_centerHorizontal="true"
-
+                app:showLine="false"
                 />
 
-            <TextView
-                android:id="@+id/ratingDisplayTextView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/ratingBar"
-                android:layout_centerInParent="true"
-                android:layout_marginBottom="10dp"
-                android:text="TextView"
-                android:visibility="gone"
-                android:textSize="12dp"
-                />
 
 
         </RelativeLayout>

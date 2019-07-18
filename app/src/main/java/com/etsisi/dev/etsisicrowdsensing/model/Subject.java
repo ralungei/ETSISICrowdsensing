@@ -3,13 +3,22 @@ package com.etsisi.dev.etsisicrowdsensing.model;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.ArrayList;
 
 public class Subject implements Parcelable{
+    @SerializedName("internalId")
+    private String internalId;
+    @SerializedName("id")
     private int id;
+    @SerializedName("curso")
     private int course;
+    @SerializedName("nombre")
     private String title;
+    @SerializedName("creditos")
     private int credits;
+    @SerializedName("grupos")
     private ArrayList<String> groups;
 
     public Subject(int id, String title, int course, int credits, ArrayList<String> groups) {
@@ -82,6 +91,11 @@ public class Subject implements Parcelable{
         dest.writeInt(credits);
         dest.writeStringList(groups);
     }
+
+    public String getInternalId() {
+        return internalId;
+    }
+
 }
 
 

@@ -4,9 +4,11 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -37,6 +39,16 @@ public class NotificationsFragment extends Fragment
                                     implements NotificationItemClickListener{
     private OnFragmentInteractionListener mListener;
     private ArrayList<Object> mData;
+
+    private NotificationsAdapter notificationsAdapter;
+
+    private RecyclerView notificationsRecyclerView;
+
+    public static final String FEEDBACKFORM_EXTRA = "feedback_form";
+    private static final String SELECTED_ROW_EXTRA = "selected_row";
+
+    static final int FILL_FEEDBACK_REQUEST = 0;
+
 
     public NotificationsFragment() {
         // Required empty public constructor
@@ -70,50 +82,69 @@ public class NotificationsFragment extends Fragment
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        loadData();
         notificationsRecyclerViewConfig();
+        loadData();
 
-        /*
-        notificationsRecyclerView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Toast.makeText(getContext(),
-                        "Click ListItem Number " + position, Toast.LENGTH_LONG)
-                        .show();
-            }
-        });
-
-       */
 
 
     }
 
     private void loadData(){
-        mData = new ArrayList<Object>();
+        //mData = new ArrayList<Object>();
         // Notifications sample
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy hh:mm");
-        try {
-            Date date = sdf.parse("21/12/2018 12:00");
-            Subject sub = new Subject(1,"Fundamentos de Computadores", 3, 2, new ArrayList<>());
-            mData.add(new FeedbackForm(sub, date, 2, 3104));
-        } catch (ParseException e) {
-            e.printStackTrace();
-        }
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+                Date date = null;
+                try {
+                    date = sdf.parse("12/12/2018 12:00");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Subject sub = new Subject(1,"Fundamentos de Computadores", 3, 2, new ArrayList<>());
+                mData.add(new FeedbackForm(sub, date, 2, 3104));
+                notificationsRecyclerView.setAdapter(notificationsAdapter);
+                notificationsAdapter.notifyDataSetChanged();
+            }
+        }, 5000);
+
+
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+                Date date = null;
+                try {
+                    date = sdf.parse("12/12/2018 12:00");
+                } catch (ParseException e) {
+                    e.printStackTrace();
+                }
+                Subject sub2 = new Subject(2,"Ingeniería de Requisitos", 3, 2, new ArrayList<>());
+                mData.add(new FeedbackForm(sub2, date, 1, 2104));
+                notificationsAdapter.notifyDataSetChanged();
+            }
+        }, 10000);
+
+
     }
 
 
     private void notificationsRecyclerViewConfig(){
-        RecyclerView notificationsRecyclerView = (RecyclerView) getView().findViewById(R.id.recyclerView);
+        notificationsRecyclerView = (RecyclerView) getView().findViewById(R.id.recyclerView);
+
+        mData = new ArrayList<>();
 
         LinearLayoutManager mLinearLayoutManager = new LinearLayoutManager(getContext(),
                 LinearLayoutManager.VERTICAL, false);
         notificationsRecyclerView.setLayoutManager(mLinearLayoutManager);
 
         //  This item decoration is used to draw a line under each item in Recyclerview.
-        //notificationsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
-        //        DividerItemDecoration.VERTICAL));
+        notificationsRecyclerView.addItemDecoration(new DividerItemDecoration(getContext(),
+                DividerItemDecoration.VERTICAL));
 
-        NotificationsAdapter notificationsAdapter = new NotificationsAdapter(this, mData);
+        notificationsAdapter = new NotificationsAdapter(this, mData);
         notificationsRecyclerView.setAdapter(notificationsAdapter);
     }
 
@@ -142,10 +173,28 @@ public class NotificationsFragment extends Fragment
     }
 
     @Override
-    public void onNotificationItemClick(int pos, Notification notification) {
+    public void onFeedbackNotificationItemClick(int pos, FeedbackForm feedbackForm) {
+        // TODO Send form info
         Intent intent;
         intent = new Intent(getContext(), FeedbackActivity.class);
-        startActivity(intent);
+        intent.putExtra(FEEDBACKFORM_EXTRA, feedbackForm);
+        intent.putExtra(SELECTED_ROW_EXTRA, pos);
+        startActivityForResult(intent, FILL_FEEDBACK_REQUEST);
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == FILL_FEEDBACK_REQUEST){
+            if(resultCode == getActivity().RESULT_OK){
+                int selectedRow = data.getIntExtra(SELECTED_ROW_EXTRA, -1);
+                // todo delete from adapter
+                if(selectedRow != -1) {
+                    mData.remove(selectedRow);
+                    notificationsAdapter.notifyDataSetChanged();
+                }
+            }
+        }
     }
 
     /**

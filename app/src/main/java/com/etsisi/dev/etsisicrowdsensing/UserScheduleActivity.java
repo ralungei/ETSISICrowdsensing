@@ -1,6 +1,7 @@
 package com.etsisi.dev.etsisicrowdsensing;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -21,7 +22,11 @@ import com.etsisi.dev.etsisicrowdsensing.user.wizard.plan.PlanWizardFragment;
 import com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment;
 import com.etsisi.dev.etsisicrowdsensing.user.wizard.welcome.WelcomeWizardFragment;
 import com.etsisi.dev.etsisicrowdsensing.utils.NonSwipeableViewPager;
+import com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.SetOptions;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -34,6 +39,10 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class UserScheduleActivity extends FragmentActivity
         implements
@@ -142,6 +151,12 @@ public class UserScheduleActivity extends FragmentActivity
      */
     //private ArrayList<Subject> subjectsArray = new ArrayList<Subject>();
 
+    /**
+     * Web API Connection
+     */
+    private RetrofitInstance restService;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -151,16 +166,18 @@ public class UserScheduleActivity extends FragmentActivity
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        /*
+
         // Instantiate database connection
         db = FirebaseFirestore.getInstance();
-        */
 
+        // WebAPI Rest Interface Service
+        restService = new RetrofitInstance();
 
         coursesList = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.cursos_array)));
-        loadPlanesJSON();
-        loadSubjectsJSON();
-        loadPlanSubjectsPerCourseHashMap();
+        loadPlanesWebAPI();
+        //loadSubjectsJSON();
+        loadAsignaturasWebAPI();
+        //loadPlanSubjectsPerCourseHashMap();
 
 
         // Instantiate a ViewPager and a PagerAdapter.
@@ -171,6 +188,7 @@ public class UserScheduleActivity extends FragmentActivity
         mPager.setAdapter(mPagerAdapter);
 
     }
+
 
     @Override
     public void onBackPressed() {
@@ -190,22 +208,42 @@ public class UserScheduleActivity extends FragmentActivity
 
 
     public void onFinishPressed() {
-        // TODO Here I should collect all data
-        Log.i(TAG,"DATA TO BE LOADED TO DATABASE");
-        // TODO Collect name
-        Log.i(TAG, "Username is " + userName);
-        // TODO Collect plan
-        Log.i(TAG, "Plan is " + plan.getTitle());
-        // TODO Collect UserSubjects
-        String s = "UserSubjects are ";
+        Map<String, Object> data = new HashMap<>();
+        data.put("nombre", userName);
+        data.put("plan", plan.getTitle());
+
+        db.collection("users")
+                .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                .set(data, SetOptions.merge())
+                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        Log.d(TAG, "User name and plan successfully written into Firestore Database!");
+                    }
+                });
+
+
         for(UserSubject userSubject: userSelectedSubjectsAndGroupsArrayList){
-            s += "SubjectId -> " + userSubject.getSubjectId() + " selected course is " + userSubject.getCourse() + "|";
+            db.collection("users")
+                    .document(FirebaseAuth.getInstance().getCurrentUser().getUid())
+                    .collection("asignaturas")
+                    .document(String.valueOf(userSubject.getSubjectId()))
+                    .set(userSubject);
         }
-        Log.i(TAG,s);
+
+
+        // Save name and plan in shared preferences too
+        SharedPreferences settings = getPreferences( 0);
+        SharedPreferences.Editor editor = settings.edit();
+        editor.putString("name", userName);
+        editor.putString("plan", plan.getTitle());
+        editor.apply();
+
 
         Intent intent = new Intent(this, MainActivity.class);
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
+
     }
 
 /*
@@ -264,6 +302,7 @@ public class UserScheduleActivity extends FragmentActivity
     }
 */
 
+/*
     public void loadPlanesJSON() {
         Log.i(TAG, "Started loading Planes JSON File");
         String json = loadJSONFromAsset(PlanesJSONFilePath);
@@ -281,7 +320,28 @@ public class UserScheduleActivity extends FragmentActivity
 
         Log.i(TAG, "Successfully loaded Planes JSON File");
     }
+    */
 
+    public void loadPlanesWebAPI(){
+        Call<ArrayList<Plan>> call = restService.getPlanesService().getPlanes();
+        call.enqueue(new Callback<ArrayList<Plan>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Plan>> call, Response<ArrayList<Plan>> response) {
+                if(response.isSuccessful()){
+                    planesArrayList = response.body();
+                    loadPlanSubjectsPerCourseHashMap();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Plan>> call, Throwable t) {
+
+            }
+        });
+
+    }
+
+    /*
     public void loadSubjectsJSON() {
         Log.i(TAG, "Started loading Subjects JSON File");
         String json = loadJSONFromAsset(AsignaturasJSONFilePath);
@@ -297,6 +357,25 @@ public class UserScheduleActivity extends FragmentActivity
         Log.d(TAG,str);
 
         Log.i(TAG, "Successfully loaded Subjects JSON File");
+    }
+    */
+
+    public void loadAsignaturasWebAPI() {
+        Call<ArrayList<Subject>> call = restService.getSubjectsService().getAsignaturas();
+        call.enqueue(new Callback<ArrayList<Subject>>() {
+            @Override
+            public void onResponse(Call<ArrayList<Subject>> call, Response<ArrayList<Subject>> response) {
+                if(response.isSuccessful()){
+                    subjectsArrayList = response.body();
+                    loadPlanSubjectsPerCourseHashMap();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ArrayList<Subject>> call, Throwable t) {
+
+            }
+        });
     }
 
     public String loadJSONFromAsset(String fileName) {
@@ -349,6 +428,13 @@ public class UserScheduleActivity extends FragmentActivity
 
     }
 
+
+    @Override
+    public void onPlanSubmitted(Plan plan) {
+        this.plan = plan;
+        Log.d(TAG, plan.getTitle());
+    }
+
     @Override
     public void onSubjectsSubmitted(HashMap<Integer, ArrayList<Subject>> selectedSubjects) {
         this.selectedSubjectsPerCourseHashMap = selectedSubjects;
@@ -380,13 +466,6 @@ public class UserScheduleActivity extends FragmentActivity
 
             Log.d(TAG, "Key " + entry.getKey() + " values are -> " + subjects);
         }
-    }
-
-
-    @Override
-    public void onPlanSubmitted(Plan plan) {
-        this.plan = plan;
-        Log.d(TAG, plan.getTitle());
     }
 
 

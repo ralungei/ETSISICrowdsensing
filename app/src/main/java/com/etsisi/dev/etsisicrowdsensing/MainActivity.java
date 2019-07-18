@@ -1,12 +1,21 @@
 package com.etsisi.dev.etsisicrowdsensing;
 
+import android.arch.lifecycle.Observer;
+import android.arch.lifecycle.ViewModelProviders;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.view.PagerAdapter;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
+import android.util.SparseArray;
+import android.view.ViewGroup;
 
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigation;
 import com.aurelhubert.ahbottomnavigation.AHBottomNavigationItem;
@@ -14,8 +23,15 @@ import com.aurelhubert.ahbottomnavigation.notification.AHNotification;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment;
 import com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.profile.ProfileFragment;
+import com.etsisi.dev.etsisicrowdsensing.model.Event;
 import com.etsisi.dev.etsisicrowdsensing.model.Incidence;
+import com.etsisi.dev.etsisicrowdsensing.model.Notification;
+import com.etsisi.dev.etsisicrowdsensing.utils.NonSwipeableViewPager;
+import com.google.firebase.auth.FirebaseAuth;
 
+import java.lang.ref.WeakReference;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -24,6 +40,10 @@ public class MainActivity extends AppCompatActivity
                 NotificationsFragment.OnFragmentInteractionListener,
                 ProfileFragment.OnFragmentInteractionListener{
 
+    private static final String TAG = "MainActivity";
+
+    // SQLite Mobile Database
+    private EventViewModel mEventViewModel;
 
     private AHBottomNavigation bottomNavigation;
     private boolean notificationVisible = false;
@@ -33,6 +53,9 @@ public class MainActivity extends AppCompatActivity
      * Incidences array
      */
     private ArrayList<Incidence> incidencesDataset;
+    private ArrayList<Event> eventsDataset;
+
+    private static final FirebaseAuth mAuth = FirebaseAuth.getInstance();
 
 
     @Override
@@ -40,19 +63,29 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        /**
-         * TODO Load data from database
-         */
-        loadIncidences();
+        // Data from SQLite Database containing events is loaded in the Campus Fragment
+        incidencesDataset = new ArrayList<>();
+
+        //FirebaseAuth mAuth = FirebaseAuth.getInstance();
+
 
         bottomNavigation = findViewById(R.id.bottom_navigation);
         addBottomNavigationItems();
         setupBottomNavStyle();
 
         // Fake notification (Delete line below)
-        createFakeNotification();
+        createFakeNotification("1", 5000);
+        createFakeNotification("2", 10000);
+
 
         bottomNavigation.setBehaviorTranslationEnabled(false);
+        // Instantiate a ViewPager and a PagerAdapter.
+        NonSwipeableViewPager mPager = (NonSwipeableViewPager) findViewById(R.id.viewpager);
+
+        PagerAdapter mPagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+
+        mPager.setAdapter(mPagerAdapter);
+
 
         bottomNavigation.setOnTabSelectedListener(new AHBottomNavigation.OnTabSelectedListener() {
             @Override
@@ -61,26 +94,30 @@ public class MainActivity extends AppCompatActivity
                 if (notificationVisible && position == 1)
                     bottomNavigation.setNotification(new AHNotification(), 1);
 
-                switch (position) {
-                    case 0:
-                        loadFragment(CampusFragment.newInstance());
-                        return true;
-                    case 1:
-                        loadFragment(NotificationsFragment.newInstance());
-                        return true;
-                    case 2:
-                        loadFragment(ProfileFragment.newInstance("Nombre"));
-                        return true;
-                }
-                return false;
+                mPager.setCurrentItem(position);
+
+                return true;
             }
         });
 
+
         // Load campus fragment by default
-        loadFragment(new CampusFragment());
+        //loadFragment(new CampusFragment());
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        //getSupportFragmentManager().putFragment(outState, "myFragmentName", mContent);
+    }
+
+    public String getAuthenticatedUserId(){
+        return mAuth.getCurrentUser().getUid();
+    }
+
+    /*
     private void loadFragment(Fragment fragment) {
         // Create new fragment and transaction
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
@@ -94,16 +131,51 @@ public class MainActivity extends AppCompatActivity
         transaction.commit();
     }
 
+
+
+    /*
     private void loadIncidences(){
         incidencesDataset = new ArrayList<Incidence>();
-        /*
+    }
+
+
+
+    private void loadIncidencesSample(){
+        incidencesDataset = new ArrayList<Incidence>();
         Incidence in1 = new Incidence("Material", "Pizarra", 3402, new Date());
-        Incidence in2 = new Incidence("Ambiente", "Demasiado frío", 3, new Date());
-        Incidence in3 = new Incidence("Instalaciones", "Bancos", 3, new Date());
+        Incidence in2 = new Incidence("Ambiente", "Frío", 3, new Date());
+        Incidence in3 = new Incidence("Instalaciones", "Máquinas expendedoras", 3, new Date());
         incidencesDataset.add(in1);
         incidencesDataset.add(in2);
         incidencesDataset.add(in3);
-        */
+    }
+    */
+
+    /*
+    private void loadEvents(){
+        eventsDataset = new ArrayList<Event>();
+        loadEventsSample();
+    }
+
+    private void loadEventsSample(){
+        eventsDataset = new ArrayList<Event>();
+        Event ev1 = new Event("Estadística", parseDate("13/11/2018 12:00"), "Definición axiomática de probabilidad", "Temas 1,2", 0);
+        Event ev2 = new Event("Aspectos éticos y sociales", parseDate("15/12/2018 12:00"), "Aula 5201","Tema 7", 1);
+        Event ev3 = new Event("Fundamentos de Ingeniería del Software", parseDate("14/12/2018 12:00"), "Bloque IX", "Tema 2", 2);
+
+        eventsDataset.add(ev1);
+        eventsDataset.add(ev2);
+        eventsDataset.add(ev3);
+    }
+    */
+
+    public static Date parseDate(String date) {
+        try {
+            return new SimpleDateFormat("dd/MM/yyyy hh:mm").parse(date);
+        } catch (ParseException e) {
+            Log.e(TAG, e.toString());
+            return null;
+        }
     }
 
     @Override
@@ -118,8 +190,24 @@ public class MainActivity extends AppCompatActivity
         return incidencesDataset.remove(incidence);
     }
 
+    /*
+    @Override
+    public boolean addEvent(Event event) {
+        return eventsDataset.add(event);
+    }
+
+    @Override
+    public boolean deleteEvent(Event event) {
+        return eventsDataset.remove(event);
+    }
+    */
+
     public ArrayList<Incidence> getIncidencesDataset() {
         return incidencesDataset;
+    }
+
+    public ArrayList<Event> getEventsDataset() {
+        return eventsDataset;
     }
 
     @Override
@@ -131,7 +219,7 @@ public class MainActivity extends AppCompatActivity
      * Adds styling properties to {@link AHBottomNavigation}
      */
     private void setupBottomNavStyle() {
-// Change colors
+        // Change colors
         // Set background color
         bottomNavigation.setDefaultBackgroundColor(Color.parseColor("#FFFFFF"));
         bottomNavigation.setAccentColor(Color.parseColor("#2196F3"));
@@ -163,12 +251,12 @@ public class MainActivity extends AppCompatActivity
         bottomNavigation.addItem(item3);
     }
 
-    private void createFakeNotification() {
+    private void createFakeNotification(String number, long delay) {
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 AHNotification notification = new AHNotification.Builder()
-                        .setText("1")
+                        .setText(number)
                         .setBackgroundColor(Color.RED)
                         .setTextColor(Color.WHITE)
                         .build();
@@ -176,6 +264,63 @@ public class MainActivity extends AppCompatActivity
                 bottomNavigation.setNotification(notification, 1);
                 notificationVisible = true;
             }
-        }, 5000);
+        }, delay);
+    }
+
+    /**
+     * A simple pager adapter that represents 5 ScreenSlidePageFragment objects, in
+     * sequence.
+     */
+    public class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+        private final SparseArray<WeakReference<Fragment>> instantiatedFragments = new SparseArray<>();
+
+
+        public ScreenSlidePagerAdapter(FragmentManager fm) {
+            super(fm);
+        }
+
+        @Override
+        public Fragment getItem(int position) {
+
+            switch (position) {
+                case 0:
+                    return CampusFragment.newInstance();
+                case 1:
+                    return NotificationsFragment.newInstance();
+                case 2:
+                    return ProfileFragment.newInstance("a");
+                default:
+                    return null;
+            }
+
+        }
+
+        @Override
+        public Object instantiateItem(final ViewGroup container, final int position) {
+            final Fragment fragment = (Fragment) super.instantiateItem(container, position);
+            instantiatedFragments.put(position, new WeakReference<>(fragment));
+            return fragment;
+        }
+
+        @Override
+        public void destroyItem(final ViewGroup container, final int position, final Object object) {
+            instantiatedFragments.remove(position);
+            super.destroyItem(container, position, object);
+        }
+
+        @Nullable
+        public Fragment getFragment(final int position) {
+            final WeakReference<Fragment> wr = instantiatedFragments.get(position);
+            if (wr != null) {
+                return wr.get();
+            } else {
+                return null;
+            }
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
     }
 }
