@@ -1,0 +1,2404 @@
+@startuml
+
+title __APP's Class Diagram__\n
+
+  namespace  {
+    namespace ndroid.arch.core {
+      class android.arch.core.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.core {
+      class android.arch.core.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      class android.arch.lifecycle.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      class android.arch.lifecycle.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace extensions {
+        class android.arch.lifecycle.extensions.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace extensions {
+        class android.arch.lifecycle.extensions.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace livedata {
+        class android.arch.lifecycle.livedata.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace livedata {
+        class android.arch.lifecycle.livedata.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace livedata {
+        namespace core {
+          class android.arch.lifecycle.livedata.core.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace livedata {
+        namespace core {
+          class android.arch.lifecycle.livedata.core.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace viewmodel {
+        class android.arch.lifecycle.viewmodel.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.lifecycle {
+      namespace viewmodel {
+        class android.arch.lifecycle.viewmodel.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.persistence.db {
+      class android.arch.persistence.db.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.persistence.db {
+      class android.arch.persistence.db.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.persistence.db {
+      namespace framework {
+        class android.arch.persistence.db.framework.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.persistence.db {
+      namespace framework {
+        class android.arch.persistence.db.framework.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.persistence.room {
+      class android.arch.persistence.room.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.arch.persistence.room {
+      class android.arch.persistence.room.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.asynclayoutinflater {
+      class android.support.asynclayoutinflater.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.asynclayoutinflater {
+      class android.support.asynclayoutinflater.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.compat {
+      class android.support.compat.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.compat {
+      class android.support.compat.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.constraint {
+      class android.support.constraint.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.constraint {
+      class android.support.constraint.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.coordinatorlayout {
+      class android.support.coordinatorlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.coordinatorlayout {
+      class android.support.coordinatorlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.coreui {
+      class android.support.coreui.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.coreui {
+      class android.support.coreui.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.coreutils {
+      class android.support.coreutils.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.coreutils {
+      class android.support.coreutils.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.cursoradapter {
+      class android.support.cursoradapter.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.cursoradapter {
+      class android.support.cursoradapter.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.customview {
+      class android.support.customview.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.customview {
+      class android.support.customview.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.design {
+      class android.support.design.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.design {
+      class android.support.design.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.documentfile {
+      class android.support.documentfile.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.documentfile {
+      class android.support.documentfile.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.drawerlayout {
+      class android.support.drawerlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.drawerlayout {
+      class android.support.drawerlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.exifinterface {
+      class android.support.exifinterface.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.exifinterface {
+      class android.support.exifinterface.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.fragment {
+      class android.support.fragment.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.fragment {
+      class android.support.fragment.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.graphics.drawable {
+      class android.support.graphics.drawable.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.graphics.drawable {
+      class android.support.graphics.drawable.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.interpolator {
+      class android.support.interpolator.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.interpolator {
+      class android.support.interpolator.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.loader {
+      class android.support.loader.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.loader {
+      class android.support.loader.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.localbroadcastmanager {
+      class android.support.localbroadcastmanager.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.localbroadcastmanager {
+      class android.support.localbroadcastmanager.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.mediacompat {
+      class android.support.mediacompat.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.mediacompat {
+      class android.support.mediacompat.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.print {
+      class android.support.print.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.print {
+      class android.support.print.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.slidingpanelayout {
+      class android.support.slidingpanelayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.slidingpanelayout {
+      class android.support.slidingpanelayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.swiperefreshlayout {
+      class android.support.swiperefreshlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.swiperefreshlayout {
+      class android.support.swiperefreshlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.test {
+      class android.support.test.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.test {
+      class android.support.test.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.transition {
+      class android.support.transition.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.transition {
+      class android.support.transition.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v13 {
+      class android.support.v13.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v13 {
+      class android.support.v13.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v17.leanback {
+      class android.support.v17.leanback.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v17.leanback {
+      class android.support.v17.leanback.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v4 {
+      class android.support.v4.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v4 {
+      class android.support.v4.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.appcompat {
+      class android.support.v7.appcompat.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.appcompat {
+      class android.support.v7.appcompat.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.cardview {
+      class android.support.v7.cardview.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.cardview {
+      class android.support.v7.cardview.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.gridlayout {
+      class android.support.v7.gridlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.gridlayout {
+      class android.support.v7.gridlayout.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.mediarouter {
+      class android.support.v7.mediarouter.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.mediarouter {
+      class android.support.v7.mediarouter.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.palette {
+      class android.support.v7.palette.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.palette {
+      class android.support.v7.palette.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.recyclerview {
+      class android.support.v7.recyclerview.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.recyclerview {
+      class android.support.v7.recyclerview.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.viewpager {
+      class android.support.v7.viewpager.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroid.support.v7.viewpager {
+      class android.support.v7.viewpager.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroidx.versionedparcelable {
+      class androidx.versionedparcelable.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace ndroidx.versionedparcelable {
+      class androidx.versionedparcelable.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.android.databinding.library {
+      class com.android.databinding.library.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.android.databinding.library {
+      class com.android.databinding.library.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.android.volley {
+      class com.android.volley.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.android.volley {
+      class com.android.volley.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.aurelhubert.ahbottomnavigation {
+      class com.aurelhubert.ahbottomnavigation.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.aurelhubert.ahbottomnavigation {
+      class com.aurelhubert.ahbottomnavigation.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.bumptech.glide {
+      class com.bumptech.glide.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.bumptech.glide {
+      class com.bumptech.glide.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.bumptech.glide {
+      namespace gifdecoder {
+        class com.bumptech.glide.gifdecoder.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.bumptech.glide {
+      namespace gifdecoder {
+        class com.bumptech.glide.gifdecoder.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.BlankFragment {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.BootReceiver {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.BuildConfig {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.BuildConfig {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.Converters {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.DatePickerFragment {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      interface com.etsisi.dev.etsisicrowdsensing.EventDao {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.EventDao_Impl {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.EventDao_Impl {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.EventRepository {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      abstract class com.etsisi.dev.etsisicrowdsensing.EventRoomDatabase {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.EventRoomDatabase_Impl {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.EventRoomDatabase_Impl {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.EventViewModel {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.GlobalNotificationBuilder {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.InitiateVolley {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.LoginActivity {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.MainActivity {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.Manifest {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.NotificationUtil {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.NotificationsDatabase {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.ParcelableUtil {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.TimePickerFragment {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      class com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace activities {
+        class com.etsisi.dev.etsisicrowdsensing.activities.FoodActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace activities {
+        class com.etsisi.dev.etsisicrowdsensing.activities.MapsActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace activities {
+        class com.etsisi.dev.etsisicrowdsensing.activities.NewsActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace activities {
+        class com.etsisi.dev.etsisicrowdsensing.activities.TransportActivity {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace alarms {
+        class com.etsisi.dev.etsisicrowdsensing.alarms.AlarmReceiver {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace alarms {
+        class com.etsisi.dev.etsisicrowdsensing.alarms.CompletedEventAlarmService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace alarms {
+        class com.etsisi.dev.etsisicrowdsensing.alarms.EventNotificationService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.MenuOption {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusGridAdapter {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace events {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventDetailActivity {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace events {
+            interface com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemClickListener {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace events {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemTouchHelper {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace events {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventsAdapter {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace events {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.NewEventActivity {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace incidences {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.EmptyViewSupportRecyclerView {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace incidences {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceDetailActivity {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace incidences {
+            interface com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceItemClickListener {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace incidences {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidentsAdapter {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace incidences {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidentsViewHolder {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.campus {
+          namespace incidences {
+            class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.NewIncidenceActivity {
+            }
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackBlocksAdapter {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackBlocksViewHolder {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackNotificationViewHolder {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsActivity {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsAdapter {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          interface com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationItemClickListener {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsAdapter {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.notifications {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.TransportNotificationViewHolder {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace bottom.navigation.bar {
+        namespace fragment.profile {
+          class com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.profile.ProfileFragment {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace firebase.cloud.messaging {
+        class com.etsisi.dev.etsisicrowdsensing.firebase.cloud.messaging.MyFirebaseInstanceIDService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace firebase.cloud.messaging {
+        class com.etsisi.dev.etsisicrowdsensing.firebase.cloud.messaging.MyFirebaseMessagingService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.Event {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.FeedbackForm {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.FeedbackResult {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.Incidence {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.Notification {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.Plan {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.Subject {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.UserSubject {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace model {
+        class com.etsisi.dev.etsisicrowdsensing.model.Voting {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.groups {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSectionsRecyclerViewAdapter {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.groups {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSubjectsRecyclerViewAdapter {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.groups {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsWizardFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.name {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.name.NameWizardFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.plan {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.plan.PlanWizardFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.subjects {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.subjects {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsRecyclerViewAdapter {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.subjects {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace user.wizard.welcome {
+        class com.etsisi.dev.etsisicrowdsensing.user.wizard.welcome.WelcomeWizardFragment {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace utils {
+        enum ButtonsState {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace utils {
+        class com.etsisi.dev.etsisicrowdsensing.utils.ItemDecorationColumns {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace utils {
+        class com.etsisi.dev.etsisicrowdsensing.utils.NonSwipeableViewPager {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace utils {
+        class com.etsisi.dev.etsisicrowdsensing.utils.SwipeController {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace utils {
+        abstract class com.etsisi.dev.etsisicrowdsensing.utils.SwipeControllerActions {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace utils {
+        abstract class com.etsisi.dev.etsisicrowdsensing.utils.SwipeHelper {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace web.api.network {
+        interface com.etsisi.dev.etsisicrowdsensing.web.api.network.FeedbacksService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace web.api.network {
+        interface com.etsisi.dev.etsisicrowdsensing.web.api.network.IncidencesService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace web.api.network {
+        interface com.etsisi.dev.etsisicrowdsensing.web.api.network.PlanesService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace web.api.network {
+        class com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace web.api.network {
+        class com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitUPMInstance {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.etsisi.dev.etsisicrowdsensing {
+      namespace web.api.network {
+        interface com.etsisi.dev.etsisicrowdsensing.web.api.network.SubjectsService {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.firebase.jobdispatcher {
+      class com.firebase.jobdispatcher.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.firebase.jobdispatcher {
+      class com.firebase.jobdispatcher.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.ads_identifier {
+      class com.google.android.gms.ads_identifier.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.ads_identifier {
+      class com.google.android.gms.ads_identifier.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.base {
+      class com.google.android.gms.base.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.base {
+      class com.google.android.gms.base.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.common {
+      class com.google.android.gms.common.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.common {
+      class com.google.android.gms.common.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.flags {
+      class com.google.android.gms.flags.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.flags {
+      class com.google.android.gms.flags.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.maps {
+      class com.google.android.gms.maps.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.maps {
+      class com.google.android.gms.maps.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.measurement.api {
+      class com.google.android.gms.measurement.api.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.measurement.api {
+      class com.google.android.gms.measurement.api.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.measurement_base {
+      class com.google.android.gms.measurement_base.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.measurement_base {
+      class com.google.android.gms.measurement_base.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.stats {
+      class com.google.android.gms.stats.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.stats {
+      class com.google.android.gms.stats.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.tasks {
+      class com.google.android.gms.tasks.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.android.gms.tasks {
+      class com.google.android.gms.tasks.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      class com.google.firebase.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      class com.google.firebase.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace analytics.connector {
+        class com.google.firebase.analytics.connector.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace analytics.connector {
+        class com.google.firebase.analytics.connector.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace analytics.connector {
+        namespace impl {
+          class com.google.firebase.analytics.connector.impl.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace analytics.connector {
+        namespace impl {
+          class com.google.firebase.analytics.connector.impl.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace auth {
+        class com.google.firebase.auth.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace auth {
+        class com.google.firebase.auth.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace auth {
+        namespace internal {
+          class com.google.firebase.auth.internal.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace auth {
+        namespace internal {
+          class com.google.firebase.auth.internal.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace database.collection {
+        class com.google.firebase.database.collection.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace database.collection {
+        class com.google.firebase.database.collection.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace firebase_core {
+        class com.google.firebase.firebase_core.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace firebase_core {
+        class com.google.firebase.firebase_core.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace firestore {
+        class com.google.firebase.firestore.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace firestore {
+        class com.google.firebase.firestore.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace iid {
+        class com.google.firebase.iid.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace iid {
+        class com.google.firebase.iid.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace iid {
+        namespace internal {
+          class com.google.firebase.iid.internal.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace iid {
+        namespace internal {
+          class com.google.firebase.iid.internal.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace measurement {
+        class com.google.firebase.measurement.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace measurement {
+        class com.google.firebase.measurement.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace measurement {
+        namespace impl {
+          class com.google.firebase.measurement_impl.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace measurement {
+        namespace impl {
+          class com.google.firebase.measurement_impl.R {
+          }
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace messaging {
+        class com.google.firebase.messaging.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.google.firebase {
+      namespace messaging {
+        class com.google.firebase.messaging.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.hsalf.smilerating {
+      class com.hsalf.smilerating.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.hsalf.smilerating {
+      class com.hsalf.smilerating.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      class com.twitter.sdk.android.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      class com.twitter.sdk.android.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      namespace core {
+        class com.twitter.sdk.android.core.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      namespace core {
+        class com.twitter.sdk.android.core.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      namespace tweetcomposer {
+        class com.twitter.sdk.android.tweetcomposer.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      namespace tweetcomposer {
+        class com.twitter.sdk.android.tweetcomposer.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      namespace tweetui {
+        class com.twitter.sdk.android.tweetui.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace om.twitter.sdk.android {
+      namespace tweetui {
+        class com.twitter.sdk.android.tweetui.R {
+        }
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace irebase.com.protolitewrapper {
+      class firebase.com.protolitewrapper.R {
+      }
+    }
+  }
+  
+
+  namespace  {
+    namespace irebase.com.protolitewrapper {
+      class firebase.com.protolitewrapper.R {
+      }
+    }
+  }
+  
+
+  com.etsisi.dev.etsisicrowdsensing.BlankFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.BlankFragment o-- com.etsisi.dev.etsisicrowdsensing.BlankFragment.OnFragmentInteractionListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.BootReceiver -up-|> android.content.BroadcastReceiver
+  com.etsisi.dev.etsisicrowdsensing.DatePickerFragment -up-|> android.support.v4.app.DialogFragment
+  com.etsisi.dev.etsisicrowdsensing.EventDao_Impl .up.|> EventDao
+  com.etsisi.dev.etsisicrowdsensing.EventDao_Impl .up.|> com.etsisi.dev.etsisicrowdsensing.EventDao
+  com.etsisi.dev.etsisicrowdsensing.EventDao_Impl o-- com.etsisi.dev.etsisicrowdsensing.Converters : __converters
+  com.etsisi.dev.etsisicrowdsensing.EventRepository o-- com.etsisi.dev.etsisicrowdsensing.EventDao : mEventDao
+  com.etsisi.dev.etsisicrowdsensing.EventRoomDatabase -up-|> android.arch.persistence.room.RoomDatabase
+  com.etsisi.dev.etsisicrowdsensing.EventRoomDatabase_Impl -up-|> com.etsisi.dev.etsisicrowdsensing.EventRoomDatabase
+  com.etsisi.dev.etsisicrowdsensing.EventRoomDatabase_Impl o-- com.etsisi.dev.etsisicrowdsensing.EventDao : _eventDao
+  com.etsisi.dev.etsisicrowdsensing.EventViewModel -up-|> android.arch.lifecycle.AndroidViewModel
+  com.etsisi.dev.etsisicrowdsensing.EventViewModel o-- com.etsisi.dev.etsisicrowdsensing.EventRepository : mRepository
+  com.etsisi.dev.etsisicrowdsensing.InitiateVolley -up-|> android.app.Application
+  com.etsisi.dev.etsisicrowdsensing.LoginActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.MainActivity .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment.OnCampusFragmentInteractionListener
+  com.etsisi.dev.etsisicrowdsensing.MainActivity .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment.OnFragmentInteractionListener
+  com.etsisi.dev.etsisicrowdsensing.MainActivity .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.profile.ProfileFragment.OnFragmentInteractionListener
+  com.etsisi.dev.etsisicrowdsensing.MainActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.MainActivity o-- com.etsisi.dev.etsisicrowdsensing.EventViewModel : mEventViewModel
+  com.etsisi.dev.etsisicrowdsensing.TimePickerFragment -up-|> android.support.v4.app.DialogFragment
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsWizardFragment.OnGroupsSubmittedListener
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.name.NameWizardFragment.OnNameSubmittedListener
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.plan.PlanWizardFragment.OnPlanSubmittedListener
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment.OnSubjectsSubmittedListener
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity -up-|> android.support.v4.app.FragmentActivity
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity o-- com.etsisi.dev.etsisicrowdsensing.utils.NonSwipeableViewPager : mPager
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity o-- com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity.ScreenSlidePagerAdapter : mPagerAdapter
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity o-- com.etsisi.dev.etsisicrowdsensing.model.Plan : plan
+  com.etsisi.dev.etsisicrowdsensing.UserScheduleActivity o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance : restService
+  com.etsisi.dev.etsisicrowdsensing.activities.FoodActivity -up-|> android.app.Activity
+  com.etsisi.dev.etsisicrowdsensing.activities.MapsActivity .up.|> com.google.android.gms.maps.OnMapReadyCallback
+  com.etsisi.dev.etsisicrowdsensing.activities.MapsActivity -up-|> android.app.Activity
+  com.etsisi.dev.etsisicrowdsensing.activities.NewsActivity -up-|> android.app.ListActivity
+  com.etsisi.dev.etsisicrowdsensing.activities.TransportActivity .up.|> android.view.View.OnClickListener
+  com.etsisi.dev.etsisicrowdsensing.activities.TransportActivity -up-|> android.app.Activity
+  com.etsisi.dev.etsisicrowdsensing.alarms.AlarmReceiver -up-|> android.content.BroadcastReceiver
+  com.etsisi.dev.etsisicrowdsensing.alarms.CompletedEventAlarmService -up-|> android.app.IntentService
+  com.etsisi.dev.etsisicrowdsensing.alarms.EventNotificationService -up-|> android.app.IntentService
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment .up.|> android.view.View.OnClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventsAdapter : eventsAdapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment o-- com.etsisi.dev.etsisicrowdsensing.EventViewModel : mEventViewModel
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment.OnCampusFragmentInteractionListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance : restService
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitUPMInstance : restUPMService
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment o-- com.etsisi.dev.etsisicrowdsensing.model.Incidence : selectedIncidenceForDetail
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusFragment o-- com.etsisi.dev.etsisicrowdsensing.utils.SwipeHelper : swipeHelper
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.CampusGridAdapter -up-|> android.widget.BaseAdapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventDetailActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemTouchHelper -up-|> android.support.v7.widget.helper.ItemTouchHelper.SimpleCallback
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemTouchHelper o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemTouchHelper.RecyclerItemTouchHelperListener : listener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventsAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventsAdapter o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.EventItemClickListener : eventItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.NewEventActivity .up.|> android.app.DatePickerDialog.OnDateSetListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.NewEventActivity .up.|> android.app.TimePickerDialog.OnTimeSetListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.NewEventActivity .up.|> android.view.View.OnClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.events.NewEventActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.EmptyViewSupportRecyclerView -up-|> android.support.v7.widget.RecyclerView
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceDetailActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceDetailActivity o-- com.etsisi.dev.etsisicrowdsensing.model.Incidence : incidence
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidentsAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidentsAdapter o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidenceItemClickListener : incidenceItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.IncidentsViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.NewIncidenceActivity .up.|> android.view.View.OnClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.campus.incidences.NewIncidenceActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackActivity .up.|> android.view.View.OnClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackActivity .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackBlocksAdapter.FeedbackStateClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackActivity o-- com.etsisi.dev.etsisicrowdsensing.model.FeedbackForm : feedbackForm
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackActivity o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance : restService
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackActivity o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitUPMInstance : restUPMService
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackBlocksAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackBlocksAdapter o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackBlocksAdapter.FeedbackStateClickListener : feedbackStateClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackBlocksViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackNotificationViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsActivity .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsAdapter.ReasonItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsActivity -up-|> android.support.v7.app.AppCompatActivity
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsActivity o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsAdapter : feedbackReasonsAdapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsAdapter o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.FeedbackReasonsAdapter.ReasonItemClickListener : reasonItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsAdapter o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationItemClickListener : notificationItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment .up.|> com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationItemClickListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment.OnFragmentInteractionListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsFragment o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.NotificationsAdapter : notificationsAdapter
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.notifications.TransportNotificationViewHolder -up-|> android.support.v7.widget.RecyclerView.ViewHolder
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.profile.ProfileFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.profile.ProfileFragment o-- com.etsisi.dev.etsisicrowdsensing.bottom.navigation.bar.fragment.profile.ProfileFragment.OnFragmentInteractionListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.firebase.cloud.messaging.MyFirebaseInstanceIDService -up-|> com.google.firebase.iid.FirebaseInstanceIdService
+  com.etsisi.dev.etsisicrowdsensing.firebase.cloud.messaging.MyFirebaseMessagingService -up-|> com.google.firebase.messaging.FirebaseMessagingService
+  com.etsisi.dev.etsisicrowdsensing.model.Event .up.|> android.os.Parcelable
+  com.etsisi.dev.etsisicrowdsensing.model.FeedbackForm .up.|> android.os.Parcelable
+  com.etsisi.dev.etsisicrowdsensing.model.FeedbackForm o-- com.etsisi.dev.etsisicrowdsensing.model.Subject : subject
+  com.etsisi.dev.etsisicrowdsensing.model.Incidence .up.|> android.os.Parcelable
+  com.etsisi.dev.etsisicrowdsensing.model.Plan .up.|> android.os.Parcelable
+  com.etsisi.dev.etsisicrowdsensing.model.Subject .up.|> android.os.Parcelable
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSectionsRecyclerViewAdapter .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSubjectsRecyclerViewAdapter.OnPositionClickListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSectionsRecyclerViewAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSectionsRecyclerViewAdapter o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSectionsRecyclerViewAdapter.OnSectionFragmentInteractionListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSubjectsRecyclerViewAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSubjectsRecyclerViewAdapter o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSubjectsRecyclerViewAdapter.OnPositionClickListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsWizardFragment .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSectionsRecyclerViewAdapter.OnSectionFragmentInteractionListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsWizardFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsWizardFragment o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsSectionsRecyclerViewAdapter : adapter
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsWizardFragment o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.groups.GroupsWizardFragment.OnGroupsSubmittedListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.name.NameWizardFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.name.NameWizardFragment o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.name.NameWizardFragment.OnNameSubmittedListener : mNameSubmittedListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.plan.PlanWizardFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.plan.PlanWizardFragment o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.plan.PlanWizardFragment.OnPlanSubmittedListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.plan.PlanWizardFragment o-- com.etsisi.dev.etsisicrowdsensing.model.Plan : selectedPlan
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsFragment .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsRecyclerViewAdapter.OnPositionClickListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsFragment o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsFragment.OnChildFragmentInteractionListener : mParentListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsRecyclerViewAdapter -up-|> android.support.v7.widget.RecyclerView.Adapter
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsRecyclerViewAdapter o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsRecyclerViewAdapter.OnPositionClickListener : onPositionClickListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment .up.|> com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.CourseSubjectsFragment.OnChildFragmentInteractionListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment.OnSubjectsSubmittedListener : mListener
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment o-- com.etsisi.dev.etsisicrowdsensing.user.wizard.subjects.SubjectWizardFragment.mScreenSlidePagerAdapter : mPagerAdapter
+  com.etsisi.dev.etsisicrowdsensing.user.wizard.welcome.WelcomeWizardFragment -up-|> android.support.v4.app.Fragment
+  com.etsisi.dev.etsisicrowdsensing.utils.ItemDecorationColumns -up-|> android.support.v7.widget.RecyclerView.ItemDecoration
+  com.etsisi.dev.etsisicrowdsensing.utils.NonSwipeableViewPager -up-|> android.support.v4.view.ViewPager
+  com.etsisi.dev.etsisicrowdsensing.utils.SwipeController -up-|> android.support.v7.widget.helper.ItemTouchHelper.Callback
+  com.etsisi.dev.etsisicrowdsensing.utils.SwipeController o-- com.etsisi.dev.etsisicrowdsensing.utils.ButtonsState : buttonShowedState
+  com.etsisi.dev.etsisicrowdsensing.utils.SwipeController o-- com.etsisi.dev.etsisicrowdsensing.utils.SwipeControllerActions : buttonsActions
+  com.etsisi.dev.etsisicrowdsensing.utils.SwipeHelper -up-|> android.support.v7.widget.helper.ItemTouchHelper.SimpleCallback
+  com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.FeedbacksService : feedbacksService
+  com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.IncidencesService : incidencesService
+  com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.PlanesService : planesService
+  com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitInstance o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.SubjectsService : subjectsService
+  com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitUPMInstance o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.FeedbacksService : feedbacksService
+  com.etsisi.dev.etsisicrowdsensing.web.api.network.RetrofitUPMInstance o-- com.etsisi.dev.etsisicrowdsensing.web.api.network.IncidencesService : incidencesService
+
+
+right footer
+
+
+PlantUML diagram generated by SketchIt! (https://bitbucket.org/pmesmeur/sketch.it)
+For more information about this tool, please contact philippe.mesmeur@gmail.com
+endfooter
+
+@enduml

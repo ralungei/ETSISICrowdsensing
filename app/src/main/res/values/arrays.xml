@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="material">a</string-array>
+
+
+    <array name="cursos_array">
+        <item>Primero</item>
+        <item>Segundo</item>
+        <item>Tercero</item>
+        <item>Cuarto</item>
+    </array>
+
+    <array name="material_objects_array">
+        <item>Pizarra</item>
+        <item>Proyector</item>
+        <item>Silla</item>
+        <item>Mesa</item>
+        <item>Ventana</item>
+    </array>
+
+    <array name="atmosphere_objects_array">
+        <item>Calor</item>
+        <item>Frío</item>
+        <item>Poca luz</item>
+    </array>
+
+    <array name="facilities_objects_array">
+        <item>Máquinas expendedoras</item>
+        <item>Papeleras</item>
+        <item>Bancos</item>
+        <item>Baños</item>
+        <item>Aire acondicionado</item>
+        <item>Calefacción</item>
+        <item>Techo</item>
+    </array>
+
+
+</resources>
