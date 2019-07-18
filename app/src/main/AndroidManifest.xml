@@ -7,31 +7,39 @@
     <uses-permission android:name="android.permission.READ_PROFILE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
-
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <!--
          The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
          Google Maps Android API v2, but you must specify either coarse or fine
          location permissions for the 'MyLocation' functionality. 
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <!-- Line below probably can be deleted -->
+    <permission android:name="android.permission.INTERNET" />
+
 
     <application
         android:name=".InitiateVolley"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
+        android:networkSecurityConfig="@xml/network_security_config"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+
         <!-- Bug Fix - Reason - Using app targets API Level 28 (Android 9.0) or above and the Google Maps SDK for Android -->
-        <uses-library android:name="org.apache.http.legacy" android:required="false" />
-
-
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
 
         <activity
             android:name=".LoginActivity"
             android:label="@string/activity_login"
-            android:windowSoftInputMode="adjustResize">
+            android:windowSoftInputMode="adjustResize"
+            android:screenOrientation="sensorPortrait"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -39,6 +47,12 @@
             </intent-filter>
         </activity>
 
+        <service
+            android:name=".alarms.EventNotificationService"
+            android:exported="false" />
+        <service
+            android:name=".alarms.CompletedEventAlarmService"
+            android:exported="false" />
         <service
             android:name=".firebase.cloud.messaging.MyFirebaseInstanceIDService"
             android:exported="false">
@@ -54,6 +68,17 @@
             </intent-filter>
         </service>
 
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".alarms.AlarmReceiver"
+            android:enabled="true"/>
+
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -67,53 +92,77 @@
             android:value="@string/google_maps_key" />
 
         <activity
-            android:name=".menu.options.MapsActivity"
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="sensorPortrait"
+            />
+        <activity
+            android:name=".activities.MapsActivity"
             android:label="@string/title_activity_maps"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.etsisi.dev.etsisicrowdsensing.MainActivity" />
         </activity>
-        <activity android:name=".MainActivity" />
         <activity
-            android:name=".menu.options.TransportActivity"
+            android:name=".activities.TransportActivity"
             android:label="@string/title_activity_transport"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"
+            >
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.etsisi.dev.etsisicrowdsensing.MainActivity" />
         </activity>
-        <activity android:name=".UserScheduleActivity" />
+        <activity android:name=".UserScheduleActivity"
+            android:screenOrientation="sensorPortrait"
+            />
         <activity
-            android:name=".menu.options.NewsActivity"
+            android:name=".activities.NewsActivity"
             android:label="@string/title_activity_news"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme">
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.etsisi.dev.etsisicrowdsensing.MainActivity" />
         </activity>
         <activity
-            android:name=".bottom.navigation.bar.fragment.campus.incidents.IncidenceDetailActivity"
+            android:name=".bottom.navigation.bar.fragment.campus.incidences.IncidenceDetailActivity"
             android:label="@string/title_incidence_detail_activity"
-            android:theme="@style/AppTheme">
-
-        </activity>
-        <activity android:name=".bottom.navigation.bar.fragment.campus.incidents.NewIncidence" />
-        <activity android:name=".bottom.navigation.bar.fragment.campus.events.EventDetailActivity" />
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"/>
+        <activity android:name=".bottom.navigation.bar.fragment.campus.incidences.NewIncidenceActivity"
+            android:screenOrientation="sensorPortrait"/>
+        <activity android:name=".bottom.navigation.bar.fragment.campus.events.EventDetailActivity"
+            android:screenOrientation="sensorPortrait"/>
         <activity
             android:name=".bottom.navigation.bar.fragment.notifications.FeedbackActivity"
             android:label="@string/title_activity_feedback"
             android:parentActivityName=".MainActivity"
-            android:theme="@style/AppTheme" />
-        <activity android:name=".CalendarActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name=".bottom.navigation.bar.fragment.campus.events.NewEventActivity"
             android:label="@string/title_activity_calendar"
             android:parentActivityName=".MainActivity"
-            />
-        <activity android:name=".menu.options.FoodActivity" />
-        <activity android:name=".bottom.navigation.bar.fragment.campus.events.NewEventActivity"></activity>
+            android:windowSoftInputMode="adjustPan"
+            android:screenOrientation="sensorPortrait"/>
+        <activity
+            android:name=".activities.FoodActivity"
+            android:label="@string/title_activity_food"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme"
+            android:screenOrientation="sensorPortrait">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.etsisi.dev.etsisicrowdsensing.MainActivity" />
+        </activity>
+        <activity android:name=".bottom.navigation.bar.fragment.notifications.FeedbackReasonsActivity"/>
     </application>
 
 </manifest>
