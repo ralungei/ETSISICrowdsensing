@@ -22,7 +22,7 @@
 </p>
 
 <p align="center">
-  <img width="600" height="200" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/campus_logo.png">
+  <img width="600" height="170" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/campus_logo.png">
 </p>
 
 The application makes use of crowdsensing techniques both user satisfaction through useful tools in their daily life in their university life, as well as collecting feedback from students for the university system, in order to improve the educational experience for all the members of the campus.
@@ -44,13 +44,40 @@ On the other hand, the application incorporates bidirectionally oriented functio
 
 
 ## Authentication
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Inicio correcto.png">
+</div>
 ## Schedule setting
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Configuración de horario.png">
+</div>
 ## Incidents management
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Consulta incidencia.png">
+</div>
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Incidencia resuelta.png">
+</div>
 ## Student planner
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Añadir evento.png">
+</div>
 ## Map
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Mapa.png">
+</div>
 ## News
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Noticias.png">
+</div>
 ## Reminders
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Notificación 30 mins evento.png">
+</div>
 ## Feedback
+<div align="center">
+  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Encuesta avanzada.png">
+</div>
 ## Profile
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/image155.png">
