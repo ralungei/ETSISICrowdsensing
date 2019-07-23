@@ -47,10 +47,12 @@ On the other hand, the application incorporates bidirectionally oriented functio
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Inicio correcto.png">
 </div>
+
 ## Schedule setting
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Configuración de horario.png">
 </div>
+
 ## Incidents management
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Consulta incidencia.png">
@@ -58,26 +60,32 @@ On the other hand, the application incorporates bidirectionally oriented functio
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Incidencia resuelta.png">
 </div>
+
 ## Student planner
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Añadir evento.png">
 </div>
+
 ## Map
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Mapa.png">
 </div>
+
 ## News
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Noticias.png">
 </div>
+
 ## Reminders
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Notificación 30 mins evento.png">
 </div>
+
 ## Feedback
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Encuesta avanzada.png">
 </div>
+
 ## Profile
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/image155.png">
