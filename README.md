@@ -55,7 +55,7 @@ On the other hand, the application incorporates bidirectionally oriented functio
 
 ## Incidents management
 <div align="center">
-  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Consulta incidencia.png">
+  <img width="480" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Consulta incidencia.png">
 </div>
 <div align="center">
   <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Incidencia resuelta.png">
@@ -68,17 +68,17 @@ On the other hand, the application incorporates bidirectionally oriented functio
 
 ## Map
 <div align="center">
-  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Mapa.png">
+  <img width="480" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Mapa.png">
 </div>
 
 ## News
 <div align="center">
-  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Noticias.png">
+  <img  width="480" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Noticias.png">
 </div>
 
 ## Reminders
 <div align="center">
-  <img src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Notificación 30 mins evento.png">
+  <img  width="680" src="https://github.com/ras-haige/ETSISICrowdsensing/blob/master/Notificación 30 mins evento.png">
 </div>
 
 ## Feedback
